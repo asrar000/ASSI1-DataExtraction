@@ -307,12 +307,13 @@ async def run():
     time_str = now.strftime("%H%M%S")
 
     dj_total = config.DUMMYJSON_TOTAL_PRODUCTS
+    dj_chunk_size = config.DUMMYJSON_CHUNK_SIZE
     mk_total = config.MOCKAROO_TOTAL_RECORDS
-    chunk_size = config.CHUNK_SIZE
+    mk_chunk_size = config.MOCKAROO_CHUNK_SIZE
     concurrency = config.CONCURRENCY_LIMIT
 
-    dj_num_chunks = math.ceil(dj_total / chunk_size)
-    mk_num_chunks = math.ceil(mk_total / chunk_size)
+    dj_num_chunks = math.ceil(dj_total / dj_chunk_size)
+    mk_num_chunks = math.ceil(mk_total / mk_chunk_size)
 
     logger.info(
         f"Async extraction started — "
@@ -340,8 +341,8 @@ async def run():
         dj_tasks = [
             fetch_dummyjson_chunk(
                 dj_session, logger, semaphore,
-                limit=min(chunk_size, dj_total - i * chunk_size),
-                skip=i * chunk_size,
+                limit=min(dj_chunk_size, dj_total - i * dj_chunk_size),
+                skip=i * dj_chunk_size,
                 chunk_index=i,
             )
             for i in range(dj_num_chunks)
@@ -350,7 +351,7 @@ async def run():
         mk_tasks = [
             fetch_mockaroo_chunk(
                 mk_session, logger, semaphore,
-                count=min(chunk_size, mk_total - i * chunk_size),
+                count=min(mk_chunk_size, mk_total - i * mk_chunk_size),
                 chunk_index=i,
             )
             for i in range(mk_num_chunks)
@@ -376,8 +377,8 @@ async def run():
     dj_extracted = 0
 
     for chunk_index, records in dj_ordered:
-        skip = chunk_index * chunk_size
-        expected = min(chunk_size, dj_total - skip)
+        skip = chunk_index * dj_chunk_size
+        expected = min(dj_chunk_size, dj_total - skip)
 
         if len(records) != expected:
             logger.warning(
@@ -413,7 +414,7 @@ async def run():
     mk_extracted = 0
 
     for chunk_index, records in mk_ordered:
-        expected = min(chunk_size, mk_total - chunk_index * chunk_size)
+        expected = min(mk_chunk_size, mk_total - chunk_index * mk_chunk_size)
 
         if len(records) != expected:
             logger.warning(
