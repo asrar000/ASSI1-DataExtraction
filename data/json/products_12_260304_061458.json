@@ -1,0 +1,622 @@
+[
+  {
+    "id": 111,
+    "title": "Selfie Stick Monopod",
+    "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
+    "category": "mobile-accessories",
+    "price": 12.99,
+    "discountPercentage": 19.12,
+    "rating": 3.88,
+    "stock": 11,
+    "tags": [
+      "electronics",
+      "selfie accessories"
+    ],
+    "brand": "SnapTech",
+    "sku": "MOB-SNA-SEL-111",
+    "weight": 2,
+    "dimensions": {
+      "width": 24.76,
+      "height": 26.38,
+      "depth": 21.39
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Ryan Graham",
+        "reviewerEmail": "ryan.graham@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Nora Russell",
+        "reviewerEmail": "nora.russell@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Very dissatisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Luna Perez",
+        "reviewerEmail": "luna.perez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "7063982050226",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp"
+  },
+  {
+    "id": 112,
+    "title": "TV Studio Camera Pedestal",
+    "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
+    "category": "mobile-accessories",
+    "price": 499.99,
+    "discountPercentage": 8.31,
+    "rating": 2.78,
+    "stock": 15,
+    "tags": [
+      "electronics",
+      "camera accessories"
+    ],
+    "brand": "ProVision",
+    "sku": "MOB-PRO-STU-112",
+    "weight": 4,
+    "dimensions": {
+      "width": 29.84,
+      "height": 11.01,
+      "depth": 6.81
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Aubrey Gutierrez",
+        "reviewerEmail": "aubrey.gutierrez@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Carter Rivera",
+        "reviewerEmail": "carter.rivera@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Max Russell",
+        "reviewerEmail": "max.russell@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "1488782082307",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp"
+  },
+  {
+    "id": 113,
+    "title": "Generic Motorcycle",
+    "description": "The Generic Motorcycle is a versatile and reliable bike suitable for various riding preferences. With a balanced design, it provides a comfortable and efficient riding experience.",
+    "category": "motorcycle",
+    "price": 3999.99,
+    "discountPercentage": 12.1,
+    "rating": 4.91,
+    "stock": 34,
+    "tags": [
+      "motorcycles"
+    ],
+    "brand": "Generic Motors",
+    "sku": "MOT-GEN-GEN-113",
+    "weight": 8,
+    "dimensions": {
+      "width": 26.23,
+      "height": 14.04,
+      "depth": 17.87
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Hunter Gordon",
+        "reviewerEmail": "hunter.gordon@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Nicholas Bailey",
+        "reviewerEmail": "nicholas.bailey@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Elena Long",
+        "reviewerEmail": "elena.long@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "2304118422941",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/thumbnail.webp"
+  },
+  {
+    "id": 114,
+    "title": "Kawasaki Z800",
+    "description": "The Kawasaki Z800 is a powerful and agile sportbike known for its striking design and performance. It's equipped with advanced features, making it a favorite among motorcycle enthusiasts.",
+    "category": "motorcycle",
+    "price": 8999.99,
+    "discountPercentage": 9.77,
+    "rating": 3.98,
+    "stock": 52,
+    "tags": [
+      "motorcycles",
+      "sportbikes"
+    ],
+    "brand": "Kawasaki",
+    "sku": "MOT-KAW-KAW-114",
+    "weight": 9,
+    "dimensions": {
+      "width": 18.3,
+      "height": 18.27,
+      "depth": 16.06
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Scarlett Bowman",
+        "reviewerEmail": "scarlett.bowman@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Gabriel Bailey",
+        "reviewerEmail": "gabriel.bailey@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Henry Hill",
+        "reviewerEmail": "henry.hill@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "7320871299196",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/thumbnail.webp"
+  },
+  {
+    "id": 115,
+    "title": "MotoGP CI.H1",
+    "description": "The MotoGP CI.H1 is a high-performance motorcycle inspired by MotoGP racing technology. It offers cutting-edge features and precision engineering for an exhilarating riding experience.",
+    "category": "motorcycle",
+    "price": 14999.99,
+    "discountPercentage": 6.92,
+    "rating": 2.97,
+    "stock": 10,
+    "tags": [
+      "motorcycles",
+      "sportbikes"
+    ],
+    "brand": "MotoGP",
+    "sku": "MOT-MOT-MOT-115",
+    "weight": 1,
+    "dimensions": {
+      "width": 19.33,
+      "height": 17.31,
+      "depth": 12.05
+    },
+    "warrantyInformation": "1 month warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Brandon Collins",
+        "reviewerEmail": "brandon.collins@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Miles Stevenson",
+        "reviewerEmail": "miles.stevenson@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Grayson Coleman",
+        "reviewerEmail": "grayson.coleman@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "1635178066049",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/thumbnail.webp"
+  },
+  {
+    "id": 116,
+    "title": "Scooter Motorcycle",
+    "description": "The Scooter Motorcycle is a practical and fuel-efficient bike ideal for urban commuting. It features a step-through design and user-friendly controls for easy maneuverability.",
+    "category": "motorcycle",
+    "price": 2999.99,
+    "discountPercentage": 6.27,
+    "rating": 2.53,
+    "stock": 84,
+    "tags": [
+      "motorcycles",
+      "scooters"
+    ],
+    "brand": "ScootMaster",
+    "sku": "MOT-SCO-SCO-116",
+    "weight": 7,
+    "dimensions": {
+      "width": 27.31,
+      "height": 19.34,
+      "depth": 26.72
+    },
+    "warrantyInformation": "5 year warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Luna Perez",
+        "reviewerEmail": "luna.perez@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not as described!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Samantha Howard",
+        "reviewerEmail": "samantha.howard@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Very dissatisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Noah Hernandez",
+        "reviewerEmail": "noah.hernandez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6595209798181",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/thumbnail.webp"
+  },
+  {
+    "id": 117,
+    "title": "Sportbike Motorcycle",
+    "description": "The Sportbike Motorcycle is designed for speed and agility, with a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding experience.",
+    "category": "motorcycle",
+    "price": 7499.99,
+    "discountPercentage": 11.58,
+    "rating": 3.94,
+    "stock": 0,
+    "tags": [
+      "motorcycles",
+      "sportbikes"
+    ],
+    "brand": "SpeedMaster",
+    "sku": "MOT-SPE-SPO-117",
+    "weight": 10,
+    "dimensions": {
+      "width": 22.5,
+      "height": 22.74,
+      "depth": 8.38
+    },
+    "warrantyInformation": "5 year warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "Out of Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Parker",
+        "reviewerEmail": "mason.parker@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Daniel Cook",
+        "reviewerEmail": "daniel.cook@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Very disappointed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Isabella Anderson",
+        "reviewerEmail": "isabella.anderson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "8451323904420",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/thumbnail.webp"
+  },
+  {
+    "id": 118,
+    "title": "Attitude Super Leaves Hand Soap",
+    "description": "Attitude Super Leaves Hand Soap is a natural and nourishing hand soap enriched with the goodness of super leaves. It cleanses and moisturizes your hands, leaving them feeling fresh and soft.",
+    "category": "skin-care",
+    "price": 8.99,
+    "discountPercentage": 18.49,
+    "rating": 3.19,
+    "stock": 94,
+    "tags": [
+      "personal care",
+      "hand soap"
+    ],
+    "brand": "Attitude",
+    "sku": "SKI-ATT-ATT-118",
+    "weight": 1,
+    "dimensions": {
+      "width": 14.05,
+      "height": 8.3,
+      "depth": 16.62
+    },
+    "warrantyInformation": "6 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Liam Garcia",
+        "reviewerEmail": "liam.garcia@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Victoria McDonald",
+        "reviewerEmail": "victoria.mcdonald@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Hannah Robinson",
+        "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 41,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "3566048905322",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/1.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/2.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp"
+  },
+  {
+    "id": 119,
+    "title": "Olay Ultra Moisture Shea Butter Body Wash",
+    "description": "Olay Ultra Moisture Shea Butter Body Wash is a luxurious body wash that hydrates and nourishes your skin with the moisturizing power of shea butter. Enjoy a rich lather and silky-smooth skin.",
+    "category": "skin-care",
+    "price": 12.99,
+    "discountPercentage": 16.39,
+    "rating": 4.51,
+    "stock": 34,
+    "tags": [
+      "personal care",
+      "body wash"
+    ],
+    "brand": "Olay",
+    "sku": "SKI-OLA-OLA-119",
+    "weight": 4,
+    "dimensions": {
+      "width": 25.23,
+      "height": 28.33,
+      "depth": 11.89
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Abigail Rivera",
+        "reviewerEmail": "abigail.rivera@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Hunter Gordon",
+        "reviewerEmail": "hunter.gordon@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Zoe Bennett",
+        "reviewerEmail": "zoe.bennett@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 33,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "6532659691643",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/1.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/2.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp"
+  },
+  {
+    "id": 120,
+    "title": "Vaseline Men Body and Face Lotion",
+    "description": "Vaseline Men Body and Face Lotion is a specially formulated lotion designed to provide long-lasting moisture to men's skin. It absorbs quickly and helps keep the skin hydrated and healthy.",
+    "category": "skin-care",
+    "price": 9.99,
+    "discountPercentage": 13.39,
+    "rating": 3.16,
+    "stock": 95,
+    "tags": [
+      "personal care",
+      "body lotion"
+    ],
+    "brand": "Vaseline",
+    "sku": "SKI-VAS-VAS-120",
+    "weight": 4,
+    "dimensions": {
+      "width": 21.83,
+      "height": 17.38,
+      "depth": 24.76
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Aria Ferguson",
+        "reviewerEmail": "aria.ferguson@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Nova Cooper",
+        "reviewerEmail": "nova.cooper@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Madison Collins",
+        "reviewerEmail": "madison.collins@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 9,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "8483207319090",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/1.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/2.webp",
+      "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp"
+  }
+]

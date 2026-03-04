@@ -1,0 +1,615 @@
+[
+  {
+    "id": 151,
+    "title": "Tennis Ball",
+    "description": "The Tennis Ball is a standard ball used in the sport of tennis. It is designed for bouncing and hitting with tennis rackets during matches or practice sessions.",
+    "category": "sports-accessories",
+    "price": 6.99,
+    "discountPercentage": 11.76,
+    "rating": 4.06,
+    "stock": 28,
+    "tags": [
+      "sports equipment",
+      "tennis"
+    ],
+    "sku": "SPO-BRD-TEN-151",
+    "weight": 3,
+    "dimensions": {
+      "width": 8.04,
+      "height": 20.35,
+      "depth": 12.24
+    },
+    "warrantyInformation": "5 year warranty",
+    "shippingInformation": "Ships in 1 week",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Addison Ward",
+        "reviewerEmail": "addison.ward@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Max Russell",
+        "reviewerEmail": "max.russell@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Luna Perez",
+        "reviewerEmail": "luna.perez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 6,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "2793132647969",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/thumbnail.webp"
+  },
+  {
+    "id": 152,
+    "title": "Tennis Racket",
+    "description": "The Tennis Racket is an essential piece of equipment used in the sport of tennis. It features a frame with strings and a grip, allowing players to hit the tennis ball.",
+    "category": "sports-accessories",
+    "price": 49.99,
+    "discountPercentage": 19.61,
+    "rating": 4.03,
+    "stock": 6,
+    "tags": [
+      "sports equipment",
+      "tennis"
+    ],
+    "sku": "SPO-BRD-TEN-152",
+    "weight": 7,
+    "dimensions": {
+      "width": 17.7,
+      "height": 16.38,
+      "depth": 18.74
+    },
+    "warrantyInformation": "5 year warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "Low Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Parker",
+        "reviewerEmail": "mason.parker@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Gabriel Bailey",
+        "reviewerEmail": "gabriel.bailey@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Lincoln Kelly",
+        "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 5,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "5611498376196",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/thumbnail.webp"
+  },
+  {
+    "id": 153,
+    "title": "Volleyball",
+    "description": "The Volleyball is a standard ball used in the sport of volleyball. It is designed for passing, setting, and spiking over the net during volleyball matches.",
+    "category": "sports-accessories",
+    "price": 11.99,
+    "discountPercentage": 12.25,
+    "rating": 3.84,
+    "stock": 0,
+    "tags": [
+      "sports equipment",
+      "volleyball"
+    ],
+    "sku": "SPO-BRD-VOL-153",
+    "weight": 3,
+    "dimensions": {
+      "width": 17.01,
+      "height": 20.05,
+      "depth": 9.94
+    },
+    "warrantyInformation": "1 week warranty",
+    "shippingInformation": "Ships in 1 week",
+    "availabilityStatus": "Out of Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Carter Rivera",
+        "reviewerEmail": "carter.rivera@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Eli Ward",
+        "reviewerEmail": "eli.ward@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Emma Wilson",
+        "reviewerEmail": "emma.wilson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 44,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6348576170594",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/thumbnail.webp"
+  },
+  {
+    "id": 154,
+    "title": "Black Sun Glasses",
+    "description": "The Black Sun Glasses are a classic and stylish choice, featuring a sleek black frame and tinted lenses. They provide both UV protection and a fashionable look.",
+    "category": "sunglasses",
+    "price": 29.99,
+    "discountPercentage": 4.94,
+    "rating": 4.41,
+    "stock": 60,
+    "tags": [
+      "eyewear",
+      "sunglasses"
+    ],
+    "brand": "Fashion Shades",
+    "sku": "SUN-FAS-BLA-154",
+    "weight": 1,
+    "dimensions": {
+      "width": 18.51,
+      "height": 15.69,
+      "depth": 10.11
+    },
+    "warrantyInformation": "No warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Jonathan Pierce",
+        "reviewerEmail": "jonathan.pierce@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Owen Fisher",
+        "reviewerEmail": "owen.fisher@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Samantha Martinez",
+        "reviewerEmail": "samantha.martinez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 17,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "1045032983803",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/thumbnail.webp"
+  },
+  {
+    "id": 155,
+    "title": "Classic Sun Glasses",
+    "description": "The Classic Sun Glasses offer a timeless design with a neutral frame and UV-protected lenses. These sunglasses are versatile and suitable for various occasions.",
+    "category": "sunglasses",
+    "price": 24.99,
+    "discountPercentage": 4.94,
+    "rating": 3.86,
+    "stock": 1,
+    "tags": [
+      "eyewear",
+      "sunglasses"
+    ],
+    "brand": "Fashion Shades",
+    "sku": "SUN-FAS-CLA-155",
+    "weight": 8,
+    "dimensions": {
+      "width": 19.87,
+      "height": 16.73,
+      "depth": 11.07
+    },
+    "warrantyInformation": "6 months warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "Low Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Logan Lee",
+        "reviewerEmail": "logan.lee@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Very dissatisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Jack Ward",
+        "reviewerEmail": "jack.ward@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Julian James",
+        "reviewerEmail": "julian.james@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 18,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "5771263118885",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp"
+  },
+  {
+    "id": 156,
+    "title": "Green and Black Glasses",
+    "description": "The Green and Black Glasses feature a bold combination of green and black colors, adding a touch of vibrancy to your eyewear collection. They are both stylish and eye-catching.",
+    "category": "sunglasses",
+    "price": 34.99,
+    "discountPercentage": 1.01,
+    "rating": 4.55,
+    "stock": 24,
+    "tags": [
+      "eyewear",
+      "sunglasses"
+    ],
+    "brand": "Fashion Shades",
+    "sku": "SUN-FAS-GRE-156",
+    "weight": 7,
+    "dimensions": {
+      "width": 26.13,
+      "height": 9.8,
+      "depth": 25.94
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Waste of money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Ava Taylor",
+        "reviewerEmail": "ava.taylor@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Owen Sullivan",
+        "reviewerEmail": "owen.sullivan@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Victoria McDonald",
+        "reviewerEmail": "victoria.mcdonald@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 15,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "0635466237296",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/thumbnail.webp"
+  },
+  {
+    "id": 157,
+    "title": "Party Glasses",
+    "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations.",
+    "category": "sunglasses",
+    "price": 19.99,
+    "discountPercentage": 11.22,
+    "rating": 2.79,
+    "stock": 86,
+    "tags": [
+      "eyewear",
+      "party glasses"
+    ],
+    "brand": "Fashion Fun",
+    "sku": "SUN-FAS-PAR-157",
+    "weight": 9,
+    "dimensions": {
+      "width": 19.59,
+      "height": 22.06,
+      "depth": 27.53
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Levi Hicks",
+        "reviewerEmail": "levi.hicks@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Ariana Ross",
+        "reviewerEmail": "ariana.ross@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Samantha Howard",
+        "reviewerEmail": "samantha.howard@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 39,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "8806276971112",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/thumbnail.webp"
+  },
+  {
+    "id": 158,
+    "title": "Sunglasses",
+    "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look.",
+    "category": "sunglasses",
+    "price": 22.99,
+    "discountPercentage": 1.51,
+    "rating": 3.02,
+    "stock": 27,
+    "tags": [
+      "eyewear",
+      "sunglasses"
+    ],
+    "brand": "Fashion Shades",
+    "sku": "SUN-FAS-SUN-158",
+    "weight": 1,
+    "dimensions": {
+      "width": 16.15,
+      "height": 24.59,
+      "depth": 10.31
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Olivia Wilson",
+        "reviewerEmail": "olivia.wilson@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Lillian Bishop",
+        "reviewerEmail": "lillian.bishop@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Leah Henderson",
+        "reviewerEmail": "leah.henderson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "8850931201716",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/thumbnail.webp"
+  },
+  {
+    "id": 159,
+    "title": "iPad Mini 2021 Starlight",
+    "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
+    "category": "tablets",
+    "price": 499.99,
+    "discountPercentage": 3.64,
+    "rating": 3.18,
+    "stock": 47,
+    "tags": [
+      "electronics",
+      "tablets"
+    ],
+    "brand": "Apple",
+    "sku": "TAB-APP-IPA-159",
+    "weight": 5,
+    "dimensions": {
+      "width": 17.03,
+      "height": 5.34,
+      "depth": 29.62
+    },
+    "warrantyInformation": "2 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Eleanor Collins",
+        "reviewerEmail": "eleanor.collins@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Leo Rivera",
+        "reviewerEmail": "leo.rivera@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Carter Rivera",
+        "reviewerEmail": "carter.rivera@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 3,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6267995330420",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp"
+  },
+  {
+    "id": 160,
+    "title": "Samsung Galaxy Tab S8 Plus Grey",
+    "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
+    "category": "tablets",
+    "price": 599.99,
+    "discountPercentage": 13.31,
+    "rating": 4.68,
+    "stock": 62,
+    "tags": [
+      "electronics",
+      "tablets"
+    ],
+    "brand": "Samsung",
+    "sku": "TAB-SAM-SAM-160",
+    "weight": 1,
+    "dimensions": {
+      "width": 6.11,
+      "height": 25.85,
+      "depth": 26.85
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Christopher West",
+        "reviewerEmail": "christopher.west@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Owen Sullivan",
+        "reviewerEmail": "owen.sullivan@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Very disappointed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Aria Roberts",
+        "reviewerEmail": "aria.roberts@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "5021907981204",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp"
+  }
+]

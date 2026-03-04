@@ -1,0 +1,583 @@
+[
+  {
+    "id": 31,
+    "title": "Lemon",
+    "description": "Zesty and tangy lemons, versatile for cooking, baking, or making refreshing beverages.",
+    "category": "groceries",
+    "price": 0.79,
+    "discountPercentage": 9.7,
+    "rating": 3.53,
+    "stock": 31,
+    "tags": [
+      "fruits"
+    ],
+    "sku": "GRO-BRD-LEM-031",
+    "weight": 3,
+    "dimensions": {
+      "width": 23.77,
+      "height": 9.22,
+      "depth": 12.05
+    },
+    "warrantyInformation": "No warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Logan Lawson",
+        "reviewerEmail": "logan.lawson@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Avery Perez",
+        "reviewerEmail": "avery.perez@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Benjamin Foster",
+        "reviewerEmail": "benjamin.foster@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 29,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "4871812433378",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/lemon/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/lemon/thumbnail.webp"
+  },
+  {
+    "id": 32,
+    "title": "Milk",
+    "description": "Fresh and nutritious milk, a staple for various recipes and daily consumption.",
+    "category": "groceries",
+    "price": 3.49,
+    "discountPercentage": 13.74,
+    "rating": 2.61,
+    "stock": 27,
+    "tags": [
+      "dairy"
+    ],
+    "sku": "GRO-BRD-MIL-032",
+    "weight": 5,
+    "dimensions": {
+      "width": 12.92,
+      "height": 15.76,
+      "depth": 11.29
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Nicholas Bailey",
+        "reviewerEmail": "nicholas.bailey@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Harper Turner",
+        "reviewerEmail": "harper.turner@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Autumn Gomez",
+        "reviewerEmail": "autumn.gomez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 5,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "9835034508303",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/milk/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/milk/thumbnail.webp"
+  },
+  {
+    "id": 33,
+    "title": "Mulberry",
+    "description": "Sweet and juicy mulberries, perfect for snacking or adding to desserts and cereals.",
+    "category": "groceries",
+    "price": 4.99,
+    "discountPercentage": 12.87,
+    "rating": 4.95,
+    "stock": 99,
+    "tags": [
+      "fruits"
+    ],
+    "sku": "GRO-BRD-MUL-033",
+    "weight": 5,
+    "dimensions": {
+      "width": 12.8,
+      "height": 18.54,
+      "depth": 6.31
+    },
+    "warrantyInformation": "2 year warranty",
+    "shippingInformation": "Ships in 1 week",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Avery Barnes",
+        "reviewerEmail": "avery.barnes@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Sadie Morales",
+        "reviewerEmail": "sadie.morales@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Oscar Powers",
+        "reviewerEmail": "oscar.powers@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 43,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "2206629068605",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/mulberry/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/mulberry/thumbnail.webp"
+  },
+  {
+    "id": 34,
+    "title": "Nescafe Coffee",
+    "description": "Quality coffee from Nescafe, available in various blends for a rich and satisfying cup.",
+    "category": "groceries",
+    "price": 7.99,
+    "discountPercentage": 1.59,
+    "rating": 4.82,
+    "stock": 57,
+    "tags": [
+      "beverages",
+      "coffee"
+    ],
+    "sku": "GRO-BRD-NES-034",
+    "weight": 6,
+    "dimensions": {
+      "width": 20.54,
+      "height": 29.49,
+      "depth": 29.2
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Gabriel Adams",
+        "reviewerEmail": "gabriel.adams@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Ella Cook",
+        "reviewerEmail": "ella.cook@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Logan Torres",
+        "reviewerEmail": "logan.torres@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "8572637994159",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/thumbnail.webp"
+  },
+  {
+    "id": 35,
+    "title": "Potatoes",
+    "description": "Versatile and starchy potatoes, great for roasting, mashing, or as a side dish.",
+    "category": "groceries",
+    "price": 2.29,
+    "discountPercentage": 5.38,
+    "rating": 4.81,
+    "stock": 13,
+    "tags": [
+      "vegetables"
+    ],
+    "sku": "GRO-BRD-POT-035",
+    "weight": 9,
+    "dimensions": {
+      "width": 22.65,
+      "height": 9.83,
+      "depth": 21.75
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Eleanor Collins",
+        "reviewerEmail": "eleanor.collins@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Lily Torres",
+        "reviewerEmail": "lily.torres@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Ariana Ross",
+        "reviewerEmail": "ariana.ross@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 9,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "3590399655074",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/potatoes/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/potatoes/thumbnail.webp"
+  },
+  {
+    "id": 36,
+    "title": "Protein Powder",
+    "description": "Nutrient-packed protein powder, ideal for supplementing your diet with essential proteins.",
+    "category": "groceries",
+    "price": 19.99,
+    "discountPercentage": 7.59,
+    "rating": 4.18,
+    "stock": 80,
+    "tags": [
+      "health supplements"
+    ],
+    "sku": "GRO-BRD-PRO-036",
+    "weight": 9,
+    "dimensions": {
+      "width": 9.01,
+      "height": 12.53,
+      "depth": 22.35
+    },
+    "warrantyInformation": "1 week warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Very unhappy with my purchase!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Aurora Rodriguez",
+        "reviewerEmail": "aurora.rodriguez@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Miles Stevenson",
+        "reviewerEmail": "miles.stevenson@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Clara Berry",
+        "reviewerEmail": "clara.berry@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 6,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "0435397154434",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/protein-powder/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/protein-powder/thumbnail.webp"
+  },
+  {
+    "id": 37,
+    "title": "Red Onions",
+    "description": "Flavorful and aromatic red onions, perfect for adding depth to your savory dishes.",
+    "category": "groceries",
+    "price": 1.99,
+    "discountPercentage": 9.9,
+    "rating": 4.2,
+    "stock": 82,
+    "tags": [
+      "vegetables"
+    ],
+    "sku": "GRO-BRD-ONI-037",
+    "weight": 9,
+    "dimensions": {
+      "width": 16.01,
+      "height": 24.96,
+      "depth": 12.74
+    },
+    "warrantyInformation": "1 month warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Maya Reed",
+        "reviewerEmail": "maya.reed@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Very dissatisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Evelyn Gonzalez",
+        "reviewerEmail": "evelyn.gonzalez@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Jackson Evans",
+        "reviewerEmail": "jackson.evans@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "4716374115631",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/red-onions/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/red-onions/thumbnail.webp"
+  },
+  {
+    "id": 38,
+    "title": "Rice",
+    "description": "High-quality rice, a staple for various cuisines and a versatile base for many dishes.",
+    "category": "groceries",
+    "price": 5.99,
+    "discountPercentage": 9.29,
+    "rating": 3.18,
+    "stock": 59,
+    "tags": [
+      "grains"
+    ],
+    "sku": "GRO-BRD-RIC-038",
+    "weight": 5,
+    "dimensions": {
+      "width": 17.21,
+      "height": 9.88,
+      "depth": 17.16
+    },
+    "warrantyInformation": "6 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Sophia Brown",
+        "reviewerEmail": "sophia.brown@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Grace Perry",
+        "reviewerEmail": "grace.perry@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Very disappointed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Cameron Burke",
+        "reviewerEmail": "cameron.burke@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 20,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "7339757397015",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/rice/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/rice/thumbnail.webp"
+  },
+  {
+    "id": 39,
+    "title": "Soft Drinks",
+    "description": "Assorted soft drinks in various flavors, perfect for refreshing beverages.",
+    "category": "groceries",
+    "price": 1.99,
+    "discountPercentage": 17.48,
+    "rating": 4.75,
+    "stock": 53,
+    "tags": [
+      "beverages"
+    ],
+    "sku": "GRO-BRD-SOF-039",
+    "weight": 9,
+    "dimensions": {
+      "width": 19.75,
+      "height": 6.79,
+      "depth": 9.33
+    },
+    "warrantyInformation": "6 months warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Zachary Lee",
+        "reviewerEmail": "zachary.lee@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Oscar Powers",
+        "reviewerEmail": "oscar.powers@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Hannah Robinson",
+        "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 10,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "2991169581178",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/soft-drinks/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/soft-drinks/thumbnail.webp"
+  },
+  {
+    "id": 40,
+    "title": "Strawberry",
+    "description": "Sweet and succulent strawberries, great for snacking, desserts, or blending into smoothies.",
+    "category": "groceries",
+    "price": 3.99,
+    "discountPercentage": 1.12,
+    "rating": 3.08,
+    "stock": 46,
+    "tags": [
+      "fruits"
+    ],
+    "sku": "GRO-BRD-STR-040",
+    "weight": 1,
+    "dimensions": {
+      "width": 28.18,
+      "height": 21.25,
+      "depth": 28.54
+    },
+    "warrantyInformation": "1 week warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Amelia Perez",
+        "reviewerEmail": "amelia.perez@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Olivia Wilson",
+        "reviewerEmail": "olivia.wilson@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Hunter Gordon",
+        "reviewerEmail": "hunter.gordon@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 12,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "0792647462295",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/groceries/strawberry/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/strawberry/thumbnail.webp"
+  }
+]

@@ -1,0 +1,637 @@
+[
+  {
+    "id": 161,
+    "title": "Samsung Galaxy Tab White",
+    "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
+    "category": "tablets",
+    "price": 349.99,
+    "discountPercentage": 18.2,
+    "rating": 3.72,
+    "stock": 92,
+    "tags": [
+      "electronics",
+      "tablets"
+    ],
+    "brand": "Samsung",
+    "sku": "TAB-SAM-SAM-161",
+    "weight": 5,
+    "dimensions": {
+      "width": 15.05,
+      "height": 5.37,
+      "depth": 11.82
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 1,
+        "comment": "Waste of money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Max Russell",
+        "reviewerEmail": "max.russell@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Lincoln Kelly",
+        "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Elena Long",
+        "reviewerEmail": "elena.long@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 5,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "3477850755498",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp"
+  },
+  {
+    "id": 162,
+    "title": "Blue Frock",
+    "description": "The Blue Frock is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe.",
+    "category": "tops",
+    "price": 29.99,
+    "discountPercentage": 12.13,
+    "rating": 4.17,
+    "stock": 52,
+    "tags": [
+      "clothing",
+      "dresses"
+    ],
+    "sku": "TOP-BRD-BLU-162",
+    "weight": 5,
+    "dimensions": {
+      "width": 24.25,
+      "height": 5.91,
+      "depth": 8.79
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Victoria McDonald",
+        "reviewerEmail": "victoria.mcdonald@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Benjamin Foster",
+        "reviewerEmail": "benjamin.foster@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Addison Ward",
+        "reviewerEmail": "addison.ward@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 4,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6410441827139",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp"
+  },
+  {
+    "id": 163,
+    "title": "Girl Summer Dress",
+    "description": "The Girl Summer Dress is a cute and breezy dress designed for warm weather. With playful patterns and lightweight fabric, it's perfect for keeping cool and stylish during the summer.",
+    "category": "tops",
+    "price": 19.99,
+    "discountPercentage": 19.2,
+    "rating": 4.77,
+    "stock": 43,
+    "tags": [
+      "clothing",
+      "girls' dresses"
+    ],
+    "sku": "TOP-BRD-GIR-163",
+    "weight": 5,
+    "dimensions": {
+      "width": 26.19,
+      "height": 20.65,
+      "depth": 10.1
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Pearson",
+        "reviewerEmail": "mason.pearson@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Aubrey Garcia",
+        "reviewerEmail": "aubrey.garcia@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Charlotte Davis",
+        "reviewerEmail": "charlotte.davis@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 46,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6273976484433",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/thumbnail.webp"
+  },
+  {
+    "id": 164,
+    "title": "Gray Dress",
+    "description": "The Gray Dress is a versatile and chic option for various occasions. With a neutral gray color, it can be dressed up or down, making it a wardrobe staple for any fashion-forward individual.",
+    "category": "tops",
+    "price": 34.99,
+    "discountPercentage": 14.28,
+    "rating": 2.72,
+    "stock": 55,
+    "tags": [
+      "clothing",
+      "dresses"
+    ],
+    "sku": "TOP-BRD-GRA-164",
+    "weight": 1,
+    "dimensions": {
+      "width": 11.91,
+      "height": 25.72,
+      "depth": 18.55
+    },
+    "warrantyInformation": "1 month warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly impressed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Brayden Fleming",
+        "reviewerEmail": "brayden.fleming@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Michael Johnson",
+        "reviewerEmail": "michael.johnson@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Evelyn Sanchez",
+        "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 13,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "5201099489825",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tops/gray-dress/thumbnail.webp"
+  },
+  {
+    "id": 165,
+    "title": "Short Frock",
+    "description": "The Short Frock is a playful and trendy dress with a shorter length. Ideal for casual outings or special occasions, it combines style and comfort for a fashionable look.",
+    "category": "tops",
+    "price": 24.99,
+    "discountPercentage": 13.45,
+    "rating": 3.23,
+    "stock": 22,
+    "tags": [
+      "clothing",
+      "dresses"
+    ],
+    "sku": "TOP-BRD-SHO-165",
+    "weight": 10,
+    "dimensions": {
+      "width": 24.29,
+      "height": 6.79,
+      "depth": 28.12
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Gabriel Hayes",
+        "reviewerEmail": "gabriel.hayes@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Samantha Howard",
+        "reviewerEmail": "samantha.howard@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Luke Cooper",
+        "reviewerEmail": "luke.cooper@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 5,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "2022014761829",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tops/short-frock/thumbnail.webp"
+  },
+  {
+    "id": 166,
+    "title": "Tartan Dress",
+    "description": "The Tartan Dress features a classic tartan pattern, bringing a timeless and sophisticated touch to your wardrobe. Perfect for fall and winter, it adds a hint of traditional charm.",
+    "category": "tops",
+    "price": 39.99,
+    "discountPercentage": 12.95,
+    "rating": 4.05,
+    "stock": 73,
+    "tags": [
+      "clothing",
+      "dresses"
+    ],
+    "sku": "TOP-BRD-TAR-166",
+    "weight": 8,
+    "dimensions": {
+      "width": 23.14,
+      "height": 12.44,
+      "depth": 12.67
+    },
+    "warrantyInformation": "1 month warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Pearson",
+        "reviewerEmail": "mason.pearson@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Not as described!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Luke Cooper",
+        "reviewerEmail": "luke.cooper@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "William Lopez",
+        "reviewerEmail": "william.lopez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "3383823083995",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/tops/tartan-dress/thumbnail.webp"
+  },
+  {
+    "id": 167,
+    "title": "300 Touring",
+    "description": "The 300 Touring is a stylish and comfortable sedan, known for its luxurious features and smooth performance.",
+    "category": "vehicle",
+    "price": 28999.99,
+    "discountPercentage": 3.98,
+    "rating": 4.05,
+    "stock": 54,
+    "tags": [
+      "sedans",
+      "vehicles"
+    ],
+    "brand": "Chrysler",
+    "sku": "VEH-CHR-TOU-167",
+    "weight": 9,
+    "dimensions": {
+      "width": 19.2,
+      "height": 26.17,
+      "depth": 17.28
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Luna Russell",
+        "reviewerEmail": "luna.russell@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Harper Garcia",
+        "reviewerEmail": "harper.garcia@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not as described!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Harper Turner",
+        "reviewerEmail": "harper.turner@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6337799339397",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/1.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/2.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/3.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/4.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/5.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/300-touring/6.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/vehicle/300-touring/thumbnail.webp"
+  },
+  {
+    "id": 168,
+    "title": "Charger SXT RWD",
+    "description": "The Charger SXT RWD is a powerful and sporty rear-wheel-drive sedan, offering a blend of performance and practicality.",
+    "category": "vehicle",
+    "price": 32999.99,
+    "discountPercentage": 8.23,
+    "rating": 2.58,
+    "stock": 57,
+    "tags": [
+      "sedans",
+      "sports cars",
+      "vehicles"
+    ],
+    "brand": "Dodge",
+    "sku": "VEH-DOD-CHA-168",
+    "weight": 6,
+    "dimensions": {
+      "width": 16.77,
+      "height": 23.03,
+      "depth": 8.18
+    },
+    "warrantyInformation": "1 month warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Lily Torres",
+        "reviewerEmail": "lily.torres@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Hazel Evans",
+        "reviewerEmail": "hazel.evans@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Owen Fisher",
+        "reviewerEmail": "owen.fisher@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "0376498933302",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/1.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/2.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/3.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/4.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/5.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/6.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/vehicle/charger-sxt-rwd/thumbnail.webp"
+  },
+  {
+    "id": 169,
+    "title": "Dodge Hornet GT Plus",
+    "description": "The Dodge Hornet GT Plus is a compact and agile hatchback, perfect for urban driving with a touch of sportiness.",
+    "category": "vehicle",
+    "price": 24999.99,
+    "discountPercentage": 2.63,
+    "rating": 2.65,
+    "stock": 82,
+    "tags": [
+      "hatchbacks",
+      "compact cars",
+      "vehicles"
+    ],
+    "brand": "Dodge",
+    "sku": "VEH-DOD-DOD-169",
+    "weight": 8,
+    "dimensions": {
+      "width": 19.89,
+      "height": 9.8,
+      "depth": 17.8
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Autumn Gomez",
+        "reviewerEmail": "autumn.gomez@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not as described!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mateo Bennett",
+        "reviewerEmail": "mateo.bennett@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Harper Kelly",
+        "reviewerEmail": "harper.kelly@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "8578515136594",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/1.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/2.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/3.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/4.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/5.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/6.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/vehicle/dodge-hornet-gt-plus/thumbnail.webp"
+  },
+  {
+    "id": 170,
+    "title": "Durango SXT RWD",
+    "description": "The Durango SXT RWD is a spacious and versatile SUV, known for its strong performance and family-friendly features.",
+    "category": "vehicle",
+    "price": 36999.99,
+    "discountPercentage": 16.44,
+    "rating": 4.07,
+    "stock": 95,
+    "tags": [
+      "suvs",
+      "vehicles"
+    ],
+    "brand": "Dodge",
+    "sku": "VEH-DOD-DUR-170",
+    "weight": 1,
+    "dimensions": {
+      "width": 19.02,
+      "height": 29.52,
+      "depth": 24.36
+    },
+    "warrantyInformation": "2 year warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "David Martinez",
+        "reviewerEmail": "david.martinez@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Nathan Dixon",
+        "reviewerEmail": "nathan.dixon@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Very disappointed!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mila Hernandez",
+        "reviewerEmail": "mila.hernandez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "30 days return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "7539220768239",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/1.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/2.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/3.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/4.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/5.webp",
+      "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/6.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/vehicle/durango-sxt-rwd/thumbnail.webp"
+  }
+]

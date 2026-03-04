@@ -1,0 +1,610 @@
+[
+  {
+    "id": 101,
+    "title": "Apple AirPods Max Silver",
+    "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+    "category": "mobile-accessories",
+    "price": 549.99,
+    "discountPercentage": 13.67,
+    "rating": 3.47,
+    "stock": 59,
+    "tags": [
+      "electronics",
+      "over-ear headphones"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-101",
+    "weight": 2,
+    "dimensions": {
+      "width": 24.88,
+      "height": 14.9,
+      "depth": 27.54
+    },
+    "warrantyInformation": "No warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Henry Adams",
+        "reviewerEmail": "henry.adams@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Elijah Cruz",
+        "reviewerEmail": "elijah.cruz@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "William Lopez",
+        "reviewerEmail": "william.lopez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 1,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "4062176053732",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp"
+  },
+  {
+    "id": 102,
+    "title": "Apple Airpower Wireless Charger",
+    "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
+    "category": "mobile-accessories",
+    "price": 79.99,
+    "discountPercentage": 4.48,
+    "rating": 3.68,
+    "stock": 1,
+    "tags": [
+      "electronics",
+      "wireless chargers"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-102",
+    "weight": 5,
+    "dimensions": {
+      "width": 25.25,
+      "height": 25.44,
+      "depth": 10.98
+    },
+    "warrantyInformation": "2 year warranty",
+    "shippingInformation": "Ships in 1 week",
+    "availabilityStatus": "Low Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Christian Perez",
+        "reviewerEmail": "christian.perez@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Ruby Andrews",
+        "reviewerEmail": "ruby.andrews@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Harper Turner",
+        "reviewerEmail": "harper.turner@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 7,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "3323662242939",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp"
+  },
+  {
+    "id": 103,
+    "title": "Apple HomePod Mini Cosmic Grey",
+    "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
+    "category": "mobile-accessories",
+    "price": 99.99,
+    "discountPercentage": 18.1,
+    "rating": 4.62,
+    "stock": 27,
+    "tags": [
+      "electronics",
+      "smart speakers"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-103",
+    "weight": 10,
+    "dimensions": {
+      "width": 16.02,
+      "height": 29.2,
+      "depth": 19.81
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Max Russell",
+        "reviewerEmail": "max.russell@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Isaac Lawrence",
+        "reviewerEmail": "isaac.lawrence@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Avery Carter",
+        "reviewerEmail": "avery.carter@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "6135642608024",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp"
+  },
+  {
+    "id": 104,
+    "title": "Apple iPhone Charger",
+    "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
+    "category": "mobile-accessories",
+    "price": 19.99,
+    "discountPercentage": 18.52,
+    "rating": 4.15,
+    "stock": 31,
+    "tags": [
+      "electronics",
+      "chargers"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-104",
+    "weight": 1,
+    "dimensions": {
+      "width": 13.63,
+      "height": 26.25,
+      "depth": 5.95
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 1,
+        "comment": "Very disappointed!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Sadie Morales",
+        "reviewerEmail": "sadie.morales@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Great product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Lily Torres",
+        "reviewerEmail": "lily.torres@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Waste of money!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Luke Cooper",
+        "reviewerEmail": "luke.cooper@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 14,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "0879776541417",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp"
+  },
+  {
+    "id": 105,
+    "title": "Apple MagSafe Battery Pack",
+    "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
+    "category": "mobile-accessories",
+    "price": 99.99,
+    "discountPercentage": 17.17,
+    "rating": 3.62,
+    "stock": 1,
+    "tags": [
+      "electronics",
+      "power banks"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-105",
+    "weight": 6,
+    "dimensions": {
+      "width": 15.4,
+      "height": 11.89,
+      "depth": 19.67
+    },
+    "warrantyInformation": "2 year warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "Low Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Stella Morris",
+        "reviewerEmail": "stella.morris@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not as described!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Henry Adams",
+        "reviewerEmail": "henry.adams@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Cameron Burke",
+        "reviewerEmail": "cameron.burke@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 4,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "5157424897794",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp"
+  },
+  {
+    "id": 106,
+    "title": "Apple Watch Series 4 Gold",
+    "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
+    "category": "mobile-accessories",
+    "price": 349.99,
+    "discountPercentage": 12.02,
+    "rating": 2.74,
+    "stock": 33,
+    "tags": [
+      "electronics",
+      "smartwatches"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-APP-106",
+    "weight": 6,
+    "dimensions": {
+      "width": 27.69,
+      "height": 28.03,
+      "depth": 7.11
+    },
+    "warrantyInformation": "6 months warranty",
+    "shippingInformation": "Ships in 1 month",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Very unhappy with my purchase!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Chloe Morales",
+        "reviewerEmail": "chloe.morales@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Ava Harrison",
+        "reviewerEmail": "ava.harrison@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Nicholas Bailey",
+        "reviewerEmail": "nicholas.bailey@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 3,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "3921248718888",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp"
+  },
+  {
+    "id": 107,
+    "title": "Beats Flex Wireless Earphones",
+    "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
+    "category": "mobile-accessories",
+    "price": 49.99,
+    "discountPercentage": 5.73,
+    "rating": 4.24,
+    "stock": 50,
+    "tags": [
+      "electronics",
+      "wireless earphones"
+    ],
+    "brand": "Beats",
+    "sku": "MOB-BEA-BEA-107",
+    "weight": 8,
+    "dimensions": {
+      "width": 17.86,
+      "height": 25.74,
+      "depth": 23.09
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Disappointing product!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "William Gonzalez",
+        "reviewerEmail": "william.gonzalez@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Gabriel Mitchell",
+        "reviewerEmail": "gabriel.mitchell@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Gabriel Adams",
+        "reviewerEmail": "gabriel.adams@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 17,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "1741271692174",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp"
+  },
+  {
+    "id": 108,
+    "title": "iPhone 12 Silicone Case with MagSafe Plum",
+    "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
+    "category": "mobile-accessories",
+    "price": 29.99,
+    "discountPercentage": 13.85,
+    "rating": 3.62,
+    "stock": 69,
+    "tags": [
+      "electronics",
+      "phone accessories"
+    ],
+    "brand": "Apple",
+    "sku": "MOB-APP-IPH-108",
+    "weight": 7,
+    "dimensions": {
+      "width": 12.49,
+      "height": 11.29,
+      "depth": 23.52
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Penelope King",
+        "reviewerEmail": "penelope.king@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Isabella Anderson",
+        "reviewerEmail": "isabella.anderson@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Claire Foster",
+        "reviewerEmail": "claire.foster@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "90 days return policy",
+    "minimumOrderQuantity": 4,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "8156838251449",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp"
+  },
+  {
+    "id": 109,
+    "title": "Monopod",
+    "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
+    "category": "mobile-accessories",
+    "price": 19.99,
+    "discountPercentage": 8.58,
+    "rating": 4.43,
+    "stock": 48,
+    "tags": [
+      "electronics",
+      "camera accessories"
+    ],
+    "brand": "TechGear",
+    "sku": "MOB-TEC-MON-109",
+    "weight": 10,
+    "dimensions": {
+      "width": 8.8,
+      "height": 12.93,
+      "depth": 21.1
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 1,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Max Parker",
+        "reviewerEmail": "max.parker@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Maya Reed",
+        "reviewerEmail": "maya.reed@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Mila Hernandez",
+        "reviewerEmail": "mila.hernandez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 30,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "2915346477518",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp"
+  },
+  {
+    "id": 110,
+    "title": "Selfie Lamp with iPhone",
+    "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
+    "category": "mobile-accessories",
+    "price": 14.99,
+    "discountPercentage": 19.4,
+    "rating": 3.55,
+    "stock": 58,
+    "tags": [
+      "electronics",
+      "selfie accessories"
+    ],
+    "brand": "GadgetMaster",
+    "sku": "MOB-GAD-SEL-110",
+    "weight": 10,
+    "dimensions": {
+      "width": 5.26,
+      "height": 13.84,
+      "depth": 22.83
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Luke Cooper",
+        "reviewerEmail": "luke.cooper@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Caleb Perkins",
+        "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.053Z",
+        "reviewerName": "Benjamin Wilson",
+        "reviewerEmail": "benjamin.wilson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 22,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.053Z",
+      "updatedAt": "2025-04-30T09:41:02.053Z",
+      "barcode": "4372781189895",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp"
+  }
+]

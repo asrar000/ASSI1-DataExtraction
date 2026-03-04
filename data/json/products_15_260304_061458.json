@@ -1,0 +1,595 @@
+[
+  {
+    "id": 141,
+    "title": "Basketball Rim",
+    "description": "The Basketball Rim is a sturdy hoop and net assembly mounted on a basketball backboard. It provides a target for shooting and scoring in the game of basketball.",
+    "category": "sports-accessories",
+    "price": 39.99,
+    "discountPercentage": 7.74,
+    "rating": 4.6,
+    "stock": 43,
+    "tags": [
+      "sports equipment",
+      "basketball"
+    ],
+    "sku": "SPO-BRD-BAS-141",
+    "weight": 1,
+    "dimensions": {
+      "width": 15.83,
+      "height": 20.87,
+      "depth": 7.27
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Wright",
+        "reviewerEmail": "mason.wright@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Highly recommended!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Tristan Scott",
+        "reviewerEmail": "tristan.scott@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Max Parker",
+        "reviewerEmail": "max.parker@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 9,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6916173283925",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/thumbnail.webp"
+  },
+  {
+    "id": 142,
+    "title": "Cricket Ball",
+    "description": "The Cricket Ball is a hard leather ball used in the sport of cricket. It is bowled and batted in the game, and its hardness and seam contribute to the dynamics of cricket play.",
+    "category": "sports-accessories",
+    "price": 12.99,
+    "discountPercentage": 8.63,
+    "rating": 3.53,
+    "stock": 30,
+    "tags": [
+      "sports equipment",
+      "cricket"
+    ],
+    "sku": "SPO-BRD-CRI-142",
+    "weight": 7,
+    "dimensions": {
+      "width": 28.51,
+      "height": 20.77,
+      "depth": 17.66
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 1,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Julian James",
+        "reviewerEmail": "julian.james@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Autumn Gomez",
+        "reviewerEmail": "autumn.gomez@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Waste of money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Liam Gonzalez",
+        "reviewerEmail": "liam.gonzalez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 11,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "0027512125380",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/thumbnail.webp"
+  },
+  {
+    "id": 143,
+    "title": "Cricket Bat",
+    "description": "The Cricket Bat is an essential piece of cricket equipment used by batsmen to hit the cricket ball. It is made of wood and comes in various sizes and designs.",
+    "category": "sports-accessories",
+    "price": 29.99,
+    "discountPercentage": 3.29,
+    "rating": 3.17,
+    "stock": 98,
+    "tags": [
+      "sports equipment",
+      "cricket"
+    ],
+    "sku": "SPO-BRD-CRI-143",
+    "weight": 10,
+    "dimensions": {
+      "width": 27.44,
+      "height": 23.65,
+      "depth": 16.62
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Samantha Howard",
+        "reviewerEmail": "samantha.howard@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Ella Adams",
+        "reviewerEmail": "ella.adams@x.dummyjson.com"
+      },
+      {
+        "rating": 3,
+        "comment": "Poor quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Julian Newton",
+        "reviewerEmail": "julian.newton@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 16,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "1225217575490",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/thumbnail.webp"
+  },
+  {
+    "id": 144,
+    "title": "Cricket Helmet",
+    "description": "The Cricket Helmet is a protective headgear worn by cricket players, especially batsmen and wicketkeepers. It provides protection against fast bowling and bouncers.",
+    "category": "sports-accessories",
+    "price": 44.99,
+    "discountPercentage": 9.64,
+    "rating": 4.69,
+    "stock": 10,
+    "tags": [
+      "sports equipment",
+      "cricket"
+    ],
+    "sku": "SPO-BRD-CRI-144",
+    "weight": 10,
+    "dimensions": {
+      "width": 6.34,
+      "height": 6.25,
+      "depth": 21.68
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Henry Turner",
+        "reviewerEmail": "henry.turner@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Excellent quality!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Maya Reed",
+        "reviewerEmail": "maya.reed@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Avery Perez",
+        "reviewerEmail": "avery.perez@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 4,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "2192738034162",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/1.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/2.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/3.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/4.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/thumbnail.webp"
+  },
+  {
+    "id": 145,
+    "title": "Cricket Wicket",
+    "description": "The Cricket Wicket is a set of three stumps and two bails, forming a wicket used in the sport of cricket. Batsmen aim to protect the wicket while scoring runs.",
+    "category": "sports-accessories",
+    "price": 29.99,
+    "discountPercentage": 16.93,
+    "rating": 4.73,
+    "stock": 25,
+    "tags": [
+      "sports equipment",
+      "cricket"
+    ],
+    "sku": "SPO-BRD-CRI-145",
+    "weight": 5,
+    "dimensions": {
+      "width": 15.99,
+      "height": 15.23,
+      "depth": 22.81
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "Very dissatisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Gabriel Mitchell",
+        "reviewerEmail": "gabriel.mitchell@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Fast shipping!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Grayson Coleman",
+        "reviewerEmail": "grayson.coleman@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Grace Green",
+        "reviewerEmail": "grace.green@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 20,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "9514466946651",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/thumbnail.webp"
+  },
+  {
+    "id": 146,
+    "title": "Feather Shuttlecock",
+    "description": "The Feather Shuttlecock is used in the sport of badminton. It features natural feathers and is designed for high-speed play, providing stability and accuracy during matches.",
+    "category": "sports-accessories",
+    "price": 5.99,
+    "discountPercentage": 2.95,
+    "rating": 2.85,
+    "stock": 95,
+    "tags": [
+      "sports equipment",
+      "badminton"
+    ],
+    "sku": "SPO-BRD-FEA-146",
+    "weight": 4,
+    "dimensions": {
+      "width": 19.63,
+      "height": 23.73,
+      "depth": 18.56
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 1-2 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Liam Smith",
+        "reviewerEmail": "liam.smith@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Aubrey Wagner",
+        "reviewerEmail": "aubrey.wagner@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very pleased!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Scarlett Bowman",
+        "reviewerEmail": "scarlett.bowman@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 30,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "5360325610488",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/thumbnail.webp"
+  },
+  {
+    "id": 147,
+    "title": "Football",
+    "description": "The Football, also known as a soccer ball, is the standard ball used in the sport of football (soccer). It is designed for kicking and passing in the game.",
+    "category": "sports-accessories",
+    "price": 17.99,
+    "discountPercentage": 5.15,
+    "rating": 3.28,
+    "stock": 96,
+    "tags": [
+      "sports equipment",
+      "football"
+    ],
+    "sku": "SPO-BRD-FOO-147",
+    "weight": 1,
+    "dimensions": {
+      "width": 28.93,
+      "height": 23.01,
+      "depth": 11.71
+    },
+    "warrantyInformation": "Lifetime warranty",
+    "shippingInformation": "Ships overnight",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Elena Long",
+        "reviewerEmail": "elena.long@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Would not recommend!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Leah Gutierrez",
+        "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Nathan Dixon",
+        "reviewerEmail": "nathan.dixon@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 27,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "7605305555987",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/football/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/football/thumbnail.webp"
+  },
+  {
+    "id": 148,
+    "title": "Golf Ball",
+    "description": "The Golf Ball is a small ball used in the sport of golf. It features dimples on its surface, providing aerodynamic lift and distance when struck by a golf club.",
+    "category": "sports-accessories",
+    "price": 9.99,
+    "discountPercentage": 17.37,
+    "rating": 4.3,
+    "stock": 84,
+    "tags": [
+      "sports equipment",
+      "golf"
+    ],
+    "sku": "SPO-BRD-GOL-148",
+    "weight": 3,
+    "dimensions": {
+      "width": 24.89,
+      "height": 23.39,
+      "depth": 12.47
+    },
+    "warrantyInformation": "1 year warranty",
+    "shippingInformation": "Ships in 3-5 business days",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 2,
+        "comment": "Not worth the price!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Ella Cook",
+        "reviewerEmail": "ella.cook@x.dummyjson.com"
+      },
+      {
+        "rating": 2,
+        "comment": "Waste of money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Cameron Perez",
+        "reviewerEmail": "cameron.perez@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Very satisfied!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Mason Wright",
+        "reviewerEmail": "mason.wright@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "No return policy",
+    "minimumOrderQuantity": 40,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "6940117186155",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/thumbnail.webp"
+  },
+  {
+    "id": 149,
+    "title": "Iron Golf",
+    "description": "The Iron Golf is a type of golf club designed for various golf shots. It features a solid metal head and is used for approach shots, chipping, and other golfing techniques.",
+    "category": "sports-accessories",
+    "price": 49.99,
+    "discountPercentage": 6.53,
+    "rating": 4.41,
+    "stock": 90,
+    "tags": [
+      "sports equipment",
+      "golf"
+    ],
+    "sku": "SPO-BRD-IRO-149",
+    "weight": 2,
+    "dimensions": {
+      "width": 10.15,
+      "height": 19.55,
+      "depth": 5.91
+    },
+    "warrantyInformation": "3 months warranty",
+    "shippingInformation": "Ships in 2 weeks",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Julian Newton",
+        "reviewerEmail": "julian.newton@x.dummyjson.com"
+      },
+      {
+        "rating": 1,
+        "comment": "Would not buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Caleb Perkins",
+        "reviewerEmail": "caleb.perkins@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Awesome product!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Aria Ferguson",
+        "reviewerEmail": "aria.ferguson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "7 days return policy",
+    "minimumOrderQuantity": 8,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "4196059523236",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/thumbnail.webp"
+  },
+  {
+    "id": 150,
+    "title": "Metal Baseball Bat",
+    "description": "The Metal Baseball Bat is a durable and lightweight baseball bat made from metal alloys. It is commonly used in baseball games for hitting and batting practice.",
+    "category": "sports-accessories",
+    "price": 29.99,
+    "discountPercentage": 19.51,
+    "rating": 4.66,
+    "stock": 16,
+    "tags": [
+      "sports equipment",
+      "baseball"
+    ],
+    "sku": "SPO-BRD-MET-150",
+    "weight": 7,
+    "dimensions": {
+      "width": 28.43,
+      "height": 14.3,
+      "depth": 7.36
+    },
+    "warrantyInformation": "3 year warranty",
+    "shippingInformation": "Ships in 1 week",
+    "availabilityStatus": "In Stock",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Very happy with my purchase!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Gabriel Bailey",
+        "reviewerEmail": "gabriel.bailey@x.dummyjson.com"
+      },
+      {
+        "rating": 4,
+        "comment": "Great value for money!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Owen Fisher",
+        "reviewerEmail": "owen.fisher@x.dummyjson.com"
+      },
+      {
+        "rating": 5,
+        "comment": "Would buy again!",
+        "date": "2025-04-30T09:41:02.054Z",
+        "reviewerName": "Logan Lawson",
+        "reviewerEmail": "logan.lawson@x.dummyjson.com"
+      }
+    ],
+    "returnPolicy": "60 days return policy",
+    "minimumOrderQuantity": 9,
+    "meta": {
+      "createdAt": "2025-04-30T09:41:02.054Z",
+      "updatedAt": "2025-04-30T09:41:02.054Z",
+      "barcode": "7296388268295",
+      "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/1.webp"
+    ],
+    "thumbnail": "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/thumbnail.webp"
+  }
+]
