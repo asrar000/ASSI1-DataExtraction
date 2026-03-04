@@ -1,0 +1,71 @@
+# config.sample
+#
+# This is a template for your environment variables.
+# Copy this file to .env, fill in your values, then load it before running:
+#
+#   cp config.sample .env
+#   export $(grep -v '^#' .env | xargs)
+#
+# Never commit .env to version control — it is already in .gitignore.
+# Only commit this file (config.sample) so others know what variables are expected.
+
+
+# ---------------------------------------------------------------------------
+# API connection
+# ---------------------------------------------------------------------------
+
+# The base URL of the API. Only change this if you are pointing the scripts
+# at a different environment (e.g. a staging server).
+API_HOST=https://dummyjson.com
+
+
+# ---------------------------------------------------------------------------
+# API credentials (optional – DummyJSON public API does not require a key)
+# ---------------------------------------------------------------------------
+
+# Uncomment and fill in whichever your API requires.
+# For APIs that use a Bearer token:
+# API_KEY=your_api_key_here
+
+# For APIs that use Basic Auth (both must be set together):
+# API_USERNAME=your_username
+# API_PASSWORD=your_password
+
+
+# ---------------------------------------------------------------------------
+# Extraction parameters
+# ---------------------------------------------------------------------------
+
+# Total number of products to extract
+TOTAL_PRODUCTS=194
+
+# Number of products per API call
+CHUNK_SIZE=10
+
+# Maximum number of retries per request on failure or HTTP 429
+RETRY_LIMIT=5
+
+# Async script only: maximum number of concurrent requests
+CONCURRENCY_LIMIT=5
+
+
+# ---------------------------------------------------------------------------
+# Retry / backoff settings
+# ---------------------------------------------------------------------------
+
+# Exponential base — wait time grows as BASE ^ attempt number
+RETRY_BACKOFF_BASE=2.0
+
+# Maximum wait ceiling in seconds — no single wait will ever exceed this
+RETRY_BACKOFF_MAX=60.0
+
+
+# ---------------------------------------------------------------------------
+# Output paths
+# ---------------------------------------------------------------------------
+
+# Where chunked JSON data files are written
+DATA_DIR=data/json
+
+# Root folder for log files (a dated sub-folder is created automatically)
+LOG_DIR=logs
