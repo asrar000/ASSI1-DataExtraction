@@ -215,7 +215,71 @@ def write_chunk(products ,chunk_number,date_str,time_str) :
         json.dump(products, fh, indent=2, ensure_ascii=False)
     return file_path
 def main():
-    pass 
+    """Entry point: orchestrate full synchronous extraction of all products."""
+    script_start = time.monotonic()
+    logger = build_logger(SCRIPT_NAME)
+
+    now = datetime.now(timezone.utc)
+    date_str = now.strftime("%y%m%d")
+    time_str = now.strftime("%H%M%S")
+
+    total = config.TOTAL_PRODUCTS
+    chunk_size = config.CHUNK_SIZE
+    num_chunks = math.ceil(total / chunk_size)
+
+    logger.info(
+        f"Starting synchronous extraction: {total} products, "
+        f"{chunk_size} per chunk, {num_chunks} chunks expected",
+        extra={"total_products": total, "chunk_size": chunk_size, "num_chunks": num_chunks},
+    )
+
+    session = build_session()
+    products_extracted = 0
+
+    for chunk_index in range(num_chunks):
+        skip = chunk_index * chunk_size
+        # Last chunk may be smaller than chunk_size
+        limit = min(chunk_size, total - skip)
+
+        logger.info(
+            f"Fetching chunk {chunk_index + 1}/{num_chunks} "
+            f"(skip={skip}, limit={limit})",
+            extra={"chunk": chunk_index + 1, "skip": skip, "limit": limit},
+        )
+
+        products = fetch_chunk(session, logger, limit=limit, skip=skip)
+
+        # Validate chunk size
+        if len(products) != limit:
+            logger.warning(
+                f"Expected {limit} products in chunk {chunk_index + 1}, "
+                f"got {len(products)}",
+                extra={"chunk": chunk_index + 1, "expected": limit, "received": len(products)},
+            )
+        else:
+            logger.info(
+                f"Chunk {chunk_index + 1} validated: {len(products)} products",
+                extra={"chunk": chunk_index + 1, "count": len(products)},
+            )
+
+        file_path = write_chunk(products, chunk_index + 1, date_str, time_str)
+        products_extracted += len(products)
+
+        logger.info(
+            f"Chunk {chunk_index + 1} written → {file_path}",
+            extra={"chunk": chunk_index + 1, "file": str(file_path)},
+        )
+
+    total_elapsed = round((time.monotonic() - script_start) * 1000, 2)
+    logger.info(
+        f"Extraction complete: {products_extracted} products across "
+        f"{num_chunks} chunks in {total_elapsed} ms",
+        extra={
+            "total_products_extracted": products_extracted,
+            "total_chunks": num_chunks,
+            "total_elapsed_ms": total_elapsed,
+        },
+    ) 
 
 
 
