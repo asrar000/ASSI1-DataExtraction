@@ -86,7 +86,7 @@ def build_logger(script_name: str) -> logging.Logger:
 # HTTP session with built-in retry transport (network-level retries only)
 # ---------------------------------------------------------------------------
 
-def build_session() -> requests.Session:
+def build_session():
     """Build a requests Session with a transport-level retry adapter.
 
     Application-level retries (4xx / 5xx / 429) are handled separately so
@@ -102,6 +102,94 @@ def build_session() -> requests.Session:
     if config.API_KEY:
         session.headers.update({"Authorization": f"Bearer {config.API_KEY}"})
     return session
+
+
+# ---------------------------------------------------------------------------
+# Core fetch helper
+# ---------------------------------------------------------------------------
+
+def fetch_chunk(session: requests.Session,logger: logging.Logger,limit: int,skip: int) :
+    """Fetch a single page of products from the API with exponential backoff.
+
+    Args:
+        session: Active requests Session.
+        logger:  Configured JSON logger.
+        limit:   Number of products to request (CHUNK_SIZE).
+        skip:    Offset into the product catalogue.
+
+    Returns:
+        List of product dicts for this chunk.
+
+    Raises:
+        RuntimeError: If all retry attempts are exhausted.
+    """
+    url = config.API_BASE_URL
+    params = {"limit": limit, "skip": skip}
+    request_id = f"req-{uuid.uuid4().int >> 64}"
+
+    for attempt in range(config.RETRY_LIMIT + 1):
+        try:
+            start = time.monotonic()
+            response = session.get(url, params=params, timeout=30)
+            elapsed_ms = round((time.monotonic() - start) * 1000, 2)
+
+            log_extra = {
+                "request_id": request_id,
+                "url": response.url,
+                "method": "GET",
+                "status_code": response.status_code,
+                "elapsed_ms": elapsed_ms,
+                "attempt": attempt + 1,
+            }
+
+            if response.status_code == 200:
+                data = response.json()
+                products = data.get("products", [])
+                logger.info("Parsed JSON successfully", extra=log_extra)
+                return products
+
+            if response.status_code == 429 or response.status_code >= 500:
+                wait = min(
+                    config.RETRY_BACKOFF_BASE ** attempt,
+                    config.RETRY_BACKOFF_MAX,
+                )
+                logger.warning(
+                    f"Retryable error – sleeping {wait:.1f}s before retry",
+                    extra={**log_extra, "wait_seconds": wait},
+                )
+                if attempt < config.RETRY_LIMIT:
+                    time.sleep(wait)
+                    continue
+
+            # 4xx (non-429) – do not retry
+            logger.error(
+                f"Non-retryable HTTP error {response.status_code}",
+                extra=log_extra,
+            )
+            response.raise_for_status()
+
+        except requests.RequestException as exc:
+            wait = min(
+                config.RETRY_BACKOFF_BASE ** attempt,
+                config.RETRY_BACKOFF_MAX,
+            )
+            logger.error(
+                f"Request exception: {exc} – sleeping {wait:.1f}s",
+                extra={
+                    "request_id": request_id,
+                    "url": url,
+                    "method": "GET",
+                    "attempt": attempt + 1,
+                    "wait_seconds": wait,
+                },
+            )
+            if attempt < config.RETRY_LIMIT:
+                time.sleep(wait)
+                continue
+
+    raise RuntimeError(
+        f"All {config.RETRY_LIMIT} retries exhausted for skip={skip}"
+    )
 
 def main():
     pass 
