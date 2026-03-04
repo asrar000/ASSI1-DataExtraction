@@ -144,8 +144,12 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
                             await asyncio.sleep(wait)
                             continue
 
+                    # 4xx (non-429) — the request itself is wrong, retrying will never succeed
                     logger.error(f"Non-retryable HTTP error {response.status}", extra=log_extra)
-                    response.raise_for_status()
+                    raise RuntimeError(f"DummyJSON: non-retryable HTTP {response.status} for chunk={chunk_index}")
+
+            except RuntimeError:
+                raise
 
             except aiohttp.ClientError as exc:
                 wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
@@ -175,20 +179,18 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
 async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
     """Fetch one chunk of records from Mockaroo asynchronously.
 
-    Mockaroo generates data on demand per request. The API key and schema
-    key are passed as query parameters. The full URL including credentials
-    is never written to logs — only the base URL is recorded.
+    Mockaroo generates data on demand per request. The schema key is embedded
+    in the URL path and the API key is passed as a query parameter. The full
+    URL including the API key is never written to logs — only the base URL
+    is recorded.
 
     Retries on HTTP 429 and 5xx with exponential backoff.
+    Raises RuntimeError immediately on 4xx errors.
     Returns a tuple of (chunk_index, records).
     Raises RuntimeError if all retry attempts are exhausted.
     """
     url = config.MOCKAROO_BASE_URL
     params = {"count": count, "key": config.MOCKAROO_API_KEY}
-
-    if config.MOCKAROO_SCHEMA_KEY:
-        params["schema"] = config.MOCKAROO_SCHEMA_KEY
-
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
     for attempt in range(config.RETRY_LIMIT + 1):
@@ -224,8 +226,12 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                             await asyncio.sleep(wait)
                             continue
 
+                    # 4xx (non-429) — the request itself is wrong, retrying will never succeed
                     logger.error(f"Non-retryable HTTP error {response.status}", extra=log_extra)
-                    response.raise_for_status()
+                    raise RuntimeError(f"Mockaroo: non-retryable HTTP {response.status} for chunk={chunk_index}")
+
+            except RuntimeError:
+                raise
 
             except aiohttp.ClientError as exc:
                 wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
