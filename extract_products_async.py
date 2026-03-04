@@ -177,6 +177,127 @@ async def fetch_chunk(
         f"All {config.RETRY_LIMIT} retries exhausted for skip={skip}"
     )
 
+
+# ---------------------------------------------------------------------------
+# Output helpers
+# ---------------------------------------------------------------------------
+
+def write_chunk(
+    products: list[dict],
+    chunk_number: int,
+    date_str: str,
+    time_str: str,
+) -> Path:
+    """Persist a list of products to a JSON file.
+
+    Args:
+        products:     List of product dicts to serialize.
+        chunk_number: 1-based chunk index used in the filename.
+        date_str:     Date stamp (YYMMDD) for the filename.
+        time_str:     Time stamp (HHMMSS) for the filename.
+
+    Returns:
+        Path of the written file.
+    """
+    out_dir = Path(config.DATA_DIR)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    file_path = out_dir / f"products_{chunk_number}_{date_str}_{time_str}.json"
+    with open(file_path, "w", encoding="utf-8") as fh:
+        json.dump(products, fh, indent=2, ensure_ascii=False)
+    return file_path
+
+
+# ---------------------------------------------------------------------------
+# Main async orchestrator
+# ---------------------------------------------------------------------------
+
+async def run() -> None:
+    """Orchestrate asynchronous extraction of all products."""
+    script_start = time.monotonic()
+    logger = build_logger(SCRIPT_NAME)
+
+    now = datetime.now(timezone.utc)
+    date_str = now.strftime("%y%m%d")
+    time_str = now.strftime("%H%M%S")
+
+    total = config.TOTAL_PRODUCTS
+    chunk_size = config.CHUNK_SIZE
+    num_chunks = math.ceil(total / chunk_size)
+    concurrency = config.CONCURRENCY_LIMIT
+
+    logger.info(
+        f"Starting async extraction: {total} products, "
+        f"{chunk_size} per chunk, {num_chunks} chunks, "
+        f"concurrency={concurrency}",
+        extra={
+            "total_products": total,
+            "chunk_size": chunk_size,
+            "num_chunks": num_chunks,
+            "concurrency_limit": concurrency,
+        },
+    )
+
+    semaphore = asyncio.Semaphore(concurrency)
+    headers: dict[str, str] = {}
+    if config.API_KEY:
+        headers["Authorization"] = f"Bearer {config.API_KEY}"
+
+    async with aiohttp.ClientSession(headers=headers) as session:
+        tasks = []
+        for chunk_index in range(num_chunks):
+            skip = chunk_index * chunk_size
+            limit = min(chunk_size, total - skip)
+            tasks.append(
+                fetch_chunk(session, logger, semaphore, limit=limit, skip=skip, chunk_index=chunk_index)
+            )
+
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    # Sort by chunk_index to maintain order
+    ordered: list[tuple[int, list[dict]]] = []
+    for result in results:
+        if isinstance(result, Exception):
+            logger.error(f"A chunk failed: {result}")
+        else:
+            ordered.append(result)
+
+    ordered.sort(key=lambda x: x[0])
+
+    products_extracted = 0
+    for chunk_index, products in ordered:
+        skip = chunk_index * chunk_size
+        expected = min(chunk_size, total - skip)
+
+        if len(products) != expected:
+            logger.warning(
+                f"Expected {expected} products in chunk {chunk_index + 1}, "
+                f"got {len(products)}",
+                extra={"chunk": chunk_index + 1, "expected": expected, "received": len(products)},
+            )
+        else:
+            logger.info(
+                f"Chunk {chunk_index + 1} validated: {len(products)} products",
+                extra={"chunk": chunk_index + 1, "count": len(products)},
+            )
+
+        file_path = write_chunk(products, chunk_index + 1, date_str, time_str)
+        products_extracted += len(products)
+
+        logger.info(
+            f"Chunk {chunk_index + 1} written → {file_path}",
+            extra={"chunk": chunk_index + 1, "file": str(file_path)},
+        )
+
+    total_elapsed = round((time.monotonic() - script_start) * 1000, 2)
+    logger.info(
+        f"Extraction complete: {products_extracted} products across "
+        f"{num_chunks} chunks in {total_elapsed} ms",
+        extra={
+            "total_products_extracted": products_extracted,
+            "total_chunks": num_chunks,
+            "total_elapsed_ms": total_elapsed,
+        },
+    )
 def main():
     pass
 if __name__ == "__main__":
