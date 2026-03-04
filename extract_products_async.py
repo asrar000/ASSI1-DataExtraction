@@ -212,7 +212,18 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                     }
 
                     if response.status == 200:
-                        records = await response.json()
+                        raw = await response.text()
+                        try:
+                            import json as _json
+                            records = _json.loads(raw)
+                        except ValueError:
+                            # Mockaroo returns 200 with a plain-text error message when
+                            # the daily row limit is exceeded or the schema is misconfigured.
+                            logger.error(
+                                f"Mockaroo returned 200 but body is not JSON: {raw!r}",
+                                extra={**log_extra, "response_body": raw},
+                            )
+                            raise RuntimeError(f"Mockaroo: non-JSON response for chunk={chunk_index}: {raw!r}")
                         logger.info("Parsed JSON successfully", extra=log_extra)
                         return chunk_index, records
 
@@ -227,7 +238,11 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                             continue
 
                     # 4xx (non-429) — the request itself is wrong, retrying will never succeed
-                    logger.error(f"Non-retryable HTTP error {response.status}", extra=log_extra)
+                    raw_err = await response.text()
+                    logger.error(
+                        f"Non-retryable HTTP error {response.status}: {raw_err!r}",
+                        extra={**log_extra, "response_body": raw_err},
+                    )
                     raise RuntimeError(f"Mockaroo: non-retryable HTTP {response.status} for chunk={chunk_index}")
 
             except RuntimeError:
