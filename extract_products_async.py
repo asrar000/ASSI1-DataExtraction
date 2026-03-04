@@ -50,7 +50,7 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(payload)
 
 
-def build_logger(script_name: str) -> logging.Logger:
+def build_logger(script_name) :
     """Create and configure a JSON file logger for the given script name.
 
     The log file is placed at logs/<YYMMDD>/<script_name>_<YYMMDD>_<HHMMSS>.json.
@@ -82,14 +82,7 @@ def build_logger(script_name: str) -> logging.Logger:
 # Core async fetch helper
 # ---------------------------------------------------------------------------
 
-async def fetch_chunk(
-    session: aiohttp.ClientSession,
-    logger: logging.Logger,
-    semaphore: asyncio.Semaphore,
-    limit: int,
-    skip: int,
-    chunk_index: int,
-) -> tuple[int, list[dict]]:
+async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
     """Fetch a single page of products asynchronously with exponential backoff.
 
     Args:
@@ -182,12 +175,7 @@ async def fetch_chunk(
 # Output helpers
 # ---------------------------------------------------------------------------
 
-def write_chunk(
-    products: list[dict],
-    chunk_number: int,
-    date_str: str,
-    time_str: str,
-) -> Path:
+def write_chunk(products,chunk_number,date_str,time_str) :
     """Persist a list of products to a JSON file.
 
     Args:
@@ -211,7 +199,7 @@ def write_chunk(
 # Main async orchestrator
 # ---------------------------------------------------------------------------
 
-async def run() -> None:
+async def run() :
     """Orchestrate asynchronous extraction of all products."""
     script_start = time.monotonic()
     logger = build_logger(SCRIPT_NAME)
@@ -299,6 +287,7 @@ async def run() -> None:
         },
     )
 def main():
-    pass
+    """Entry point: run the async extraction coroutine."""
+    asyncio.run(run())
 if __name__ == "__main__":
     main()
