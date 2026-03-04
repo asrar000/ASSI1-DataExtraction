@@ -82,6 +82,27 @@ def build_logger(script_name: str) -> logging.Logger:
 
     return logger
 
+# ---------------------------------------------------------------------------
+# HTTP session with built-in retry transport (network-level retries only)
+# ---------------------------------------------------------------------------
+
+def build_session() -> requests.Session:
+    """Build a requests Session with a transport-level retry adapter.
+
+    Application-level retries (4xx / 5xx / 429) are handled separately so
+    that exponential back-off and logging can be applied.
+    """
+    session = requests.Session()
+    adapter = HTTPAdapter(
+        max_retries=Retry(total=0, raise_on_status=False)
+    )
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+
+    if config.API_KEY:
+        session.headers.update({"Authorization": f"Bearer {config.API_KEY}"})
+    return session
+
 def main():
     pass 
 
