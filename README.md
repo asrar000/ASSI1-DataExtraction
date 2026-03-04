@@ -4,8 +4,8 @@
 
 This project contains two Python scripts that extract product data from two sources:
 
-- DummyJSON (https://dummyjson.com/products) — a public product catalogue API
-- Mockaroo (https://api.mockaroo.com/api/generate.json) — a schema-based data generation API
+- **DummyJSON** (https://dummyjson.com/products) — a public product catalogue API
+- **Mockaroo** (https://api.mockaroo.com/api/bb185820.json) — a schema-based mock data generation API. The schema is publicly shared at https://www.mockaroo.com/bb185820
 
 Both sources are extracted in the same script run and written to chunked JSON files on disk.
 
@@ -16,20 +16,23 @@ Both sources are extracted in the same script run and written to chunked JSON fi
 
 Both scripts:
 
-- Write DummyJSON output to `data/json/dummyjson_<chunk_number>_<date>_<time>.json`
-- Write Mockaroo output to `data/json/mockaroo_<chunk_number>_<date>_<time>.json`
+- Write DummyJSON output to `data/json/dummyjson_<chunk>_<date>_<time>.json`
+- Write Mockaroo output to `data/json/mockaroo_<chunk>_<date>_<time>.json`
 - Write structured JSON logs to `logs/<YYMMDD>/<script_name>_<YYMMDD>_<HHMMSS>.json`
 - Apply exponential backoff on retryable errors (HTTP 429, 5xx, network failures)
 - Validate that each chunk contains exactly the expected number of records
 - Never write the Mockaroo API key to logs
-- Emit a final log entry reporting the total execution time for both sources
+- Emit a final log entry reporting total execution time and record counts for both sources
 
 ---
 
 ## Mockaroo Schema
 
-The Mockaroo schema used in this project is designed to mirror the flat fields
-of a DummyJSON product record as closely as possible.
+The Mockaroo schema is designed to mirror the flat fields of a DummyJSON product record
+as closely as possible. It is publicly accessible — any Mockaroo account can generate
+data from it using the schema key `bb185820`.
+
+The schema output format must be set to **JSON** (not SQL or CSV).
 
 | Field | Mockaroo Type | Settings |
 |---|---|---|
@@ -62,6 +65,24 @@ They are either nested objects or arrays that a flat schema generator cannot pro
 
 ---
 
+## Mockaroo Daily Limit
+
+The Mockaroo free tier allows **200 rows per day** across all requests. To stay within
+this limit the defaults are set to extract 10 Mockaroo records per run (one request).
+
+If you hit the limit, Mockaroo returns HTTP 200 with a plain-text error message instead
+of JSON. The scripts detect this, log the raw response body, and exit with a clear error.
+
+Options when the limit is reached:
+
+- Wait until midnight UTC for the counter to reset
+- Upgrade your Mockaroo account for a higher limit
+- Use a second Mockaroo account with a different API key — the schema is public so any
+  account can generate data from `bb185820`
+- Reduce `MOCKAROO_TOTAL_RECORDS` in `.env` to use fewer rows per run
+
+---
+
 ## Project Structure
 
 ```
@@ -70,6 +91,7 @@ They are either nested objects or arrays that a flat schema generator cannot pro
 │   └── json/                   # Extracted data files (generated at runtime)
 ├── logs/                       # JSON log files (generated at runtime)
 ├── .env.example                # Template showing all required environment variables
+├── .env                        # Your local credentials — never committed
 ├── config.py                   # Central configuration — reads from .env automatically
 ├── extract_products_sync.py    # Synchronous extraction script
 ├── extract_products_async.py   # Asynchronous extraction script
@@ -116,18 +138,17 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Open `.env` and fill in the two required values:
+Open `.env` and fill in your Mockaroo API key:
 
 ```
 MOCKAROO_API_KEY=your_key_here
-MOCKAROO_SCHEMA_KEY=your_schema_key_here
 ```
 
-Your Mockaroo API key is found at https://mockaroo.com under My Account.
-Your schema key is on the schema detail page in your Mockaroo account.
+The `MOCKAROO_SCHEMA_KEY` is already set to `bb185820` in the provided `.env` file.
+Your Mockaroo API key is found at https://mockaroo.com under My Account → API Key.
 
-The `.env` file is loaded automatically when the scripts run — no manual
-exporting needed. DummyJSON is a public API and requires no credentials.
+The `.env` file is loaded automatically when the scripts run — no manual exporting
+needed. DummyJSON is a public API and requires no credentials.
 
 ---
 
@@ -138,11 +159,12 @@ exporting needed. DummyJSON is a public API and requires no credentials.
 | `DUMMYJSON_HOST` | `https://dummyjson.com` | Base URL of the DummyJSON API |
 | `DUMMYJSON_API_KEY` | None | Bearer token for DummyJSON (not required for public use) |
 | `MOCKAROO_HOST` | `https://api.mockaroo.com` | Base URL of the Mockaroo API |
-| `MOCKAROO_API_KEY` | None | Your Mockaroo API key — required |
-| `MOCKAROO_SCHEMA_KEY` | None | Mockaroo schema key to generate data from — required |
+| `MOCKAROO_API_KEY` | — | Your Mockaroo API key — **required** |
+| `MOCKAROO_SCHEMA_KEY` | `bb185820` | Mockaroo schema key — pre-filled, no change needed |
 | `DUMMYJSON_TOTAL_PRODUCTS` | `194` | Total products to extract from DummyJSON |
-| `MOCKAROO_TOTAL_RECORDS` | `100` | Total records to extract from Mockaroo |
-| `CHUNK_SIZE` | `10` | Number of records per API call (applies to both sources) |
+| `DUMMYJSON_CHUNK_SIZE` | `10` | Records per DummyJSON API call (pagination page size) |
+| `MOCKAROO_TOTAL_RECORDS` | `10` | Total records to extract from Mockaroo per run |
+| `MOCKAROO_CHUNK_SIZE` | `10` | Records per Mockaroo API call — keep equal to `MOCKAROO_TOTAL_RECORDS` for a single request |
 | `RETRY_LIMIT` | `5` | Maximum retries per request on failure or HTTP 429 |
 | `CONCURRENCY_LIMIT` | `5` | Async script only: maximum concurrent requests across both sources |
 | `RETRY_BACKOFF_BASE` | `2.0` | Exponential backoff base in seconds |
@@ -165,3 +187,10 @@ python extract_products_async.py
 ```
 
 Output files are written to `data/json/` and logs to `logs/<YYMMDD>/`.
+
+A final log entry is emitted at the end of each run reporting the total execution time
+and the number of records extracted from each source, for example:
+
+```json
+{"message": "All extractions complete in 3378.9 ms — DummyJSON: 194 records, Mockaroo: 10 records", "total_elapsed_ms": 3378.9, "dummyjson_records": 194, "mockaroo_records": 10}
+```
