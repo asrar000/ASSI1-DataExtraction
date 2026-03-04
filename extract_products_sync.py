@@ -9,7 +9,6 @@ data/json/ and structured logs are written to logs/<date>/.
 import json
 import logging
 import math
-import os
 import time
 import uuid
 from datetime import datetime, timezone
