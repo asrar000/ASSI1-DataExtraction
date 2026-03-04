@@ -35,17 +35,23 @@ DUMMYJSON_API_KEY = os.getenv("DUMMYJSON_API_KEY", None)
 # Mockaroo API
 # ---------------------------------------------------------------------------
 
-# Base URL for the Mockaroo data generation endpoint
 MOCKAROO_HOST = os.getenv("MOCKAROO_HOST", "https://api.mockaroo.com")
-MOCKAROO_BASE_URL = f"{MOCKAROO_HOST}/api/generate.json"
 
 # Your Mockaroo API key — required. Set this in your .env file.
 # Get it from: https://mockaroo.com → My Account → API Key
 MOCKAROO_API_KEY = os.getenv("MOCKAROO_API_KEY", None)
 
-# The key of the Mockaroo schema to generate data from.
-# Find it in your Mockaroo account on the schema detail page.
+# The schema key identifies which Mockaroo schema to use.
+# It comes from the API URL on your schema page, e.g.:
+#   https://api.mockaroo.com/api/bb185820.json?count=10&key=...
+#                                    ^^^^^^^^
+# That 8-character value between /api/ and .json is your schema key.
 MOCKAROO_SCHEMA_KEY = os.getenv("MOCKAROO_SCHEMA_KEY", None)
+
+# The schema key is part of the URL path, not a query parameter.
+# Correct:   https://api.mockaroo.com/api/<schema_key>.json?count=10&key=<api_key>
+# Incorrect: https://api.mockaroo.com/api/generate.json?schema=<schema_key>&...
+MOCKAROO_BASE_URL = f"{MOCKAROO_HOST}/api/{MOCKAROO_SCHEMA_KEY}.json"
 
 
 # ---------------------------------------------------------------------------
