@@ -33,7 +33,7 @@ SCRIPT_NAME = "extract_products_sync"
 class JsonFormatter(logging.Formatter):
     """Format log records as single-line JSON objects."""
 
-    def format(self, record: logging.LogRecord) -> str:
+    def format(self, record):
         """Serialize a LogRecord to a JSON string."""
         payload = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -54,7 +54,7 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(payload)
 
 
-def build_logger(script_name: str) -> logging.Logger:
+def build_logger(script_name):
     """Create and configure a JSON file logger for the given script name.
 
     The log file is placed at logs/<YYMMDD>/<script_name>_<YYMMDD>_<HHMMSS>.json.
@@ -108,7 +108,7 @@ def build_session():
 # Core fetch helper
 # ---------------------------------------------------------------------------
 
-def fetch_chunk(session: requests.Session,logger: logging.Logger,limit: int,skip: int) :
+def fetch_chunk(session,logger,limit,skip):
     """Fetch a single page of products from the API with exponential backoff.
 
     Args:
@@ -191,6 +191,29 @@ def fetch_chunk(session: requests.Session,logger: logging.Logger,limit: int,skip
         f"All {config.RETRY_LIMIT} retries exhausted for skip={skip}"
     )
 
+
+# ---------------------------------------------------------------------------
+# Output helpers
+# ---------------------------------------------------------------------------
+
+def write_chunk(products ,chunk_number,date_str,time_str) :
+    """Persist a list of products to a JSON file.
+
+    Args:
+        products:     List of product dicts to serialize.
+        chunk_number: 1-based chunk index used in the filename.
+        date_str:     Date stamp (YYMMDD) for the filename.
+        time_str:     Time stamp (HHMMSS) for the filename.
+
+    Returns:
+        Path of the written file.
+    """
+    out_dir = Path(config.DATA_DIR)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    file_path = out_dir / f"products_{chunk_number}_{date_str}_{time_str}.json"
+    with open(file_path, "w", encoding="utf-8") as fh:
+        json.dump(products, fh, indent=2, ensure_ascii=False)
+    return file_path
 def main():
     pass 
 
