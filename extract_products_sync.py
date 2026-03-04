@@ -313,7 +313,7 @@ def extract_dummyjson(session, logger, date_str, time_str):
     each chunk, writes each chunk to disk, and returns the total record count.
     """
     total = config.DUMMYJSON_TOTAL_PRODUCTS
-    chunk_size = config.CHUNK_SIZE
+    chunk_size = config.DUMMYJSON_CHUNK_SIZE
     num_chunks = math.ceil(total / chunk_size)
     records_extracted = 0
 
@@ -364,7 +364,7 @@ def extract_mockaroo(session, logger, date_str, time_str):
     to disk, and returns the total record count.
     """
     total = config.MOCKAROO_TOTAL_RECORDS
-    chunk_size = config.CHUNK_SIZE
+    chunk_size = config.MOCKAROO_CHUNK_SIZE
     num_chunks = math.ceil(total / chunk_size)
     records_extracted = 0
 
