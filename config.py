@@ -61,11 +61,17 @@ MOCKAROO_BASE_URL = f"{MOCKAROO_HOST}/api/{MOCKAROO_SCHEMA_KEY}.json"
 # Total number of products to extract from DummyJSON
 DUMMYJSON_TOTAL_PRODUCTS = int(os.getenv("DUMMYJSON_TOTAL_PRODUCTS", "194"))
 
-# Total number of records to extract from Mockaroo across all chunks
-MOCKAROO_TOTAL_RECORDS = int(os.getenv("MOCKAROO_TOTAL_RECORDS", "100"))
+# Number of records per DummyJSON API call (pagination page size)
+DUMMYJSON_CHUNK_SIZE = int(os.getenv("DUMMYJSON_CHUNK_SIZE", "10"))
 
-# Number of records per API call — applies to both sources
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "10"))
+# Total number of records to extract from Mockaroo.
+# Mockaroo free tier allows 200 rows per day across all requests.
+# Default is 10 — fetched in a single request — to stay well within the limit.
+MOCKAROO_TOTAL_RECORDS = int(os.getenv("MOCKAROO_TOTAL_RECORDS", "10"))
+
+# Number of records per Mockaroo API call.
+# Default matches MOCKAROO_TOTAL_RECORDS so only one request is made.
+MOCKAROO_CHUNK_SIZE = int(os.getenv("MOCKAROO_CHUNK_SIZE", "10"))
 
 # Maximum number of retries per request on failure or HTTP 429
 RETRY_LIMIT = int(os.getenv("RETRY_LIMIT", "5"))
