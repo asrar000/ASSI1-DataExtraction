@@ -1,9 +1,24 @@
 """
 extract_products_async.py
 --------------------------
-Asynchronous script that extracts all products from the DummyJSON API using
-aiohttp with bounded concurrency.  Results are written to chunked JSON files
-under data/json/ and structured logs are written to logs/<date>/.
+Asynchronous script that extracts product data from two sources:
+  - DummyJSON  (https://dummyjson.com/products)
+  - Mockaroo   (https://api.mockaroo.com/api/generate.json)
+
+Both sources are fetched concurrently using aiohttp with bounded
+concurrency. Results are written to chunked JSON files under data/json/
+and structured logs are written to logs/<date>/.
+
+Mockaroo schema fields (mirrors DummyJSON product structure):
+  id, title, description, category, price, discountPercentage,
+  rating, stock, brand, sku, weight, warrantyInformation,
+  shippingInformation, availabilityStatus, returnPolicy,
+  minimumOrderQuantity, thumbnail
+
+Fields intentionally excluded from the Mockaroo schema:
+  tags, dimensions, reviews, meta, images
+  These are either nested objects or arrays that Mockaroo cannot
+  generate in a flat schema and are not required for this pipeline.
 """
 
 import asyncio
@@ -20,16 +35,20 @@ import aiohttp
 import config
 
 # ---------------------------------------------------------------------------
-# Logging setup
+# Script identity
 # ---------------------------------------------------------------------------
 
 SCRIPT_NAME = "extract_products_async"
 
 
+# ---------------------------------------------------------------------------
+# Logging setup
+# ---------------------------------------------------------------------------
+
 class JsonFormatter(logging.Formatter):
     """Format log records as single-line JSON objects."""
 
-    def format(self, record: logging.LogRecord) -> str:
+    def format(self, record):
         """Serialize a LogRecord to a JSON string."""
         payload = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -49,7 +68,7 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(payload)
 
 
-def build_logger(script_name) :
+def build_logger(script_name):
     """Create and configure a JSON file logger for the given script name.
 
     The log file is placed at logs/<YYMMDD>/<script_name>_<YYMMDD>_<HHMMSS>.json.
@@ -78,27 +97,17 @@ def build_logger(script_name) :
 
 
 # ---------------------------------------------------------------------------
-# Core async fetch helper
+# DummyJSON async fetch
 # ---------------------------------------------------------------------------
 
-async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
-    """Fetch a single page of products asynchronously with exponential backoff.
+async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_index):
+    """Fetch one page of products from DummyJSON asynchronously.
 
-    Args:
-        session:     Active aiohttp ClientSession.
-        logger:      Configured JSON logger.
-        semaphore:   Semaphore limiting concurrent requests.
-        limit:       Number of products to request (CHUNK_SIZE or remainder).
-        skip:        Offset into the product catalogue.
-        chunk_index: 0-based chunk index (used to order results).
-
-    Returns:
-        Tuple of (chunk_index, list of product dicts).
-
-    Raises:
-        RuntimeError: If all retry attempts are exhausted.
+    Uses limit/skip pagination. Retries on HTTP 429 and 5xx with
+    exponential backoff. Returns a tuple of (chunk_index, records).
+    Raises RuntimeError if all retry attempts are exhausted.
     """
-    url = config.API_BASE_URL
+    url = config.DUMMYJSON_BASE_URL
     params = {"limit": limit, "skip": skip}
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
@@ -110,6 +119,7 @@ async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
                     elapsed_ms = round((time.monotonic() - start) * 1000, 2)
 
                     log_extra = {
+                        "source": "dummyjson",
                         "request_id": request_id,
                         "url": str(response.url),
                         "method": "GET",
@@ -120,16 +130,12 @@ async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
                     }
 
                     if response.status == 200:
-                        data = await response.json()
-                        products = data.get("products", [])
+                        records = (await response.json()).get("products", [])
                         logger.info("Parsed JSON successfully", extra=log_extra)
-                        return chunk_index, products
+                        return chunk_index, records
 
                     if response.status == 429 or response.status >= 500:
-                        wait = min(
-                            config.RETRY_BACKOFF_BASE ** attempt,
-                            config.RETRY_BACKOFF_MAX,
-                        )
+                        wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
                         logger.warning(
                             f"Retryable error – sleeping {wait:.1f}s before retry",
                             extra={**log_extra, "wait_seconds": wait},
@@ -138,21 +144,15 @@ async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
                             await asyncio.sleep(wait)
                             continue
 
-                    # 4xx (non-429) – do not retry
-                    logger.error(
-                        f"Non-retryable HTTP error {response.status}",
-                        extra=log_extra,
-                    )
+                    logger.error(f"Non-retryable HTTP error {response.status}", extra=log_extra)
                     response.raise_for_status()
 
             except aiohttp.ClientError as exc:
-                wait = min(
-                    config.RETRY_BACKOFF_BASE ** attempt,
-                    config.RETRY_BACKOFF_MAX,
-                )
+                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
                 logger.error(
                     f"Client exception: {exc} – sleeping {wait:.1f}s",
                     extra={
+                        "source": "dummyjson",
                         "request_id": request_id,
                         "url": url,
                         "method": "GET",
@@ -165,32 +165,104 @@ async def fetch_chunk(session,logger,semaphore,limit,skip,chunk_index) :
                     await asyncio.sleep(wait)
                     continue
 
-    raise RuntimeError(
-        f"All {config.RETRY_LIMIT} retries exhausted for skip={skip}"
-    )
+    raise RuntimeError(f"DummyJSON: all {config.RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
 
 
 # ---------------------------------------------------------------------------
-# Output helpers
+# Mockaroo async fetch
 # ---------------------------------------------------------------------------
 
-def write_chunk(products,chunk_number,date_str,time_str) :
-    """Persist a list of products to a JSON file.
+async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
+    """Fetch one chunk of records from Mockaroo asynchronously.
 
-    Args:
-        products:     List of product dicts to serialize.
-        chunk_number: 1-based chunk index used in the filename.
-        date_str:     Date stamp (YYMMDD) for the filename.
-        time_str:     Time stamp (HHMMSS) for the filename.
+    Mockaroo generates data on demand per request. The API key and schema
+    key are passed as query parameters. The full URL including credentials
+    is never written to logs — only the base URL is recorded.
 
-    Returns:
-        Path of the written file.
+    Retries on HTTP 429 and 5xx with exponential backoff.
+    Returns a tuple of (chunk_index, records).
+    Raises RuntimeError if all retry attempts are exhausted.
+    """
+    url = config.MOCKAROO_BASE_URL
+    params = {"count": count, "key": config.MOCKAROO_API_KEY}
+
+    if config.MOCKAROO_SCHEMA_KEY:
+        params["schema"] = config.MOCKAROO_SCHEMA_KEY
+
+    request_id = f"req-{uuid.uuid4().int >> 64}"
+
+    for attempt in range(config.RETRY_LIMIT + 1):
+        async with semaphore:
+            try:
+                start = time.monotonic()
+                async with session.get(url, params=params, timeout=aiohttp.ClientTimeout(total=30)) as response:
+                    elapsed_ms = round((time.monotonic() - start) * 1000, 2)
+
+                    log_extra = {
+                        "source": "mockaroo",
+                        "request_id": request_id,
+                        "url": config.MOCKAROO_BASE_URL,
+                        "method": "GET",
+                        "status_code": response.status,
+                        "elapsed_ms": elapsed_ms,
+                        "attempt": attempt + 1,
+                        "chunk_index": chunk_index,
+                    }
+
+                    if response.status == 200:
+                        records = await response.json()
+                        logger.info("Parsed JSON successfully", extra=log_extra)
+                        return chunk_index, records
+
+                    if response.status == 429 or response.status >= 500:
+                        wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                        logger.warning(
+                            f"Retryable error – sleeping {wait:.1f}s before retry",
+                            extra={**log_extra, "wait_seconds": wait},
+                        )
+                        if attempt < config.RETRY_LIMIT:
+                            await asyncio.sleep(wait)
+                            continue
+
+                    logger.error(f"Non-retryable HTTP error {response.status}", extra=log_extra)
+                    response.raise_for_status()
+
+            except aiohttp.ClientError as exc:
+                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                logger.error(
+                    f"Client exception: {exc} – sleeping {wait:.1f}s",
+                    extra={
+                        "source": "mockaroo",
+                        "request_id": request_id,
+                        "url": url,
+                        "method": "GET",
+                        "attempt": attempt + 1,
+                        "chunk_index": chunk_index,
+                        "wait_seconds": wait,
+                    },
+                )
+                if attempt < config.RETRY_LIMIT:
+                    await asyncio.sleep(wait)
+                    continue
+
+    raise RuntimeError(f"Mockaroo: all {config.RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
+
+
+# ---------------------------------------------------------------------------
+# Output helper
+# ---------------------------------------------------------------------------
+
+def write_chunk(records, source, chunk_number, date_str, time_str):
+    """Write a list of records to a JSON file under data/json/.
+
+    The filename format is: <source>_<chunk_number>_<date>_<time>.json
+    where source is either 'dummyjson' or 'mockaroo'.
     """
     out_dir = Path(config.DATA_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
-    file_path = out_dir / f"products_{chunk_number}_{date_str}_{time_str}.json"
+    file_path = out_dir / f"{source}_{chunk_number}_{date_str}_{time_str}.json"
     with open(file_path, "w", encoding="utf-8") as fh:
-        json.dump(products, fh, indent=2, ensure_ascii=False)
+        json.dump(records, fh, indent=2, ensure_ascii=False)
     return file_path
 
 
@@ -198,8 +270,14 @@ def write_chunk(products,chunk_number,date_str,time_str) :
 # Main async orchestrator
 # ---------------------------------------------------------------------------
 
-async def run() :
-    """Orchestrate asynchronous extraction of all products."""
+async def run():
+    """Build all tasks for both sources and run them concurrently.
+
+    DummyJSON and Mockaroo tasks share the same semaphore so the total
+    number of concurrent requests across both sources never exceeds
+    CONCURRENCY_LIMIT. Results are sorted by chunk_index before being
+    written to disk to guarantee correct file ordering.
+    """
     script_start = time.monotonic()
     logger = build_logger(SCRIPT_NAME)
 
@@ -207,86 +285,154 @@ async def run() :
     date_str = now.strftime("%y%m%d")
     time_str = now.strftime("%H%M%S")
 
-    total = config.TOTAL_PRODUCTS
+    dj_total = config.DUMMYJSON_TOTAL_PRODUCTS
+    mk_total = config.MOCKAROO_TOTAL_RECORDS
     chunk_size = config.CHUNK_SIZE
-    num_chunks = math.ceil(total / chunk_size)
     concurrency = config.CONCURRENCY_LIMIT
 
+    dj_num_chunks = math.ceil(dj_total / chunk_size)
+    mk_num_chunks = math.ceil(mk_total / chunk_size)
+
     logger.info(
-        f"Starting async extraction: {total} products, "
-        f"{chunk_size} per chunk, {num_chunks} chunks, "
+        f"Async extraction started — "
+        f"DummyJSON: {dj_total} products in {dj_num_chunks} chunks, "
+        f"Mockaroo: {mk_total} records in {mk_num_chunks} chunks, "
         f"concurrency={concurrency}",
         extra={
-            "total_products": total,
-            "chunk_size": chunk_size,
-            "num_chunks": num_chunks,
+            "dummyjson_total": dj_total,
+            "dummyjson_chunks": dj_num_chunks,
+            "mockaroo_total": mk_total,
+            "mockaroo_chunks": mk_num_chunks,
             "concurrency_limit": concurrency,
         },
     )
 
     semaphore = asyncio.Semaphore(concurrency)
-    headers: dict[str, str] = {}
-    if config.API_KEY:
-        headers["Authorization"] = f"Bearer {config.API_KEY}"
 
-    async with aiohttp.ClientSession(headers=headers) as session:
-        tasks = []
-        for chunk_index in range(num_chunks):
-            skip = chunk_index * chunk_size
-            limit = min(chunk_size, total - skip)
-            tasks.append(
-                fetch_chunk(session, logger, semaphore, limit=limit, skip=skip, chunk_index=chunk_index)
+    dj_headers = {}
+    if config.DUMMYJSON_API_KEY:
+        dj_headers["Authorization"] = f"Bearer {config.DUMMYJSON_API_KEY}"
+
+    async with aiohttp.ClientSession(headers=dj_headers) as dj_session, \
+               aiohttp.ClientSession() as mk_session:
+
+        dj_tasks = [
+            fetch_dummyjson_chunk(
+                dj_session, logger, semaphore,
+                limit=min(chunk_size, dj_total - i * chunk_size),
+                skip=i * chunk_size,
+                chunk_index=i,
             )
+            for i in range(dj_num_chunks)
+        ]
 
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        mk_tasks = [
+            fetch_mockaroo_chunk(
+                mk_session, logger, semaphore,
+                count=min(chunk_size, mk_total - i * chunk_size),
+                chunk_index=i,
+            )
+            for i in range(mk_num_chunks)
+        ]
 
-    # Sort by chunk_index to maintain order
-    ordered: list[tuple[int, list[dict]]] = []
-    for result in results:
+        dj_results, mk_results = await asyncio.gather(
+            asyncio.gather(*dj_tasks, return_exceptions=True),
+            asyncio.gather(*mk_tasks, return_exceptions=True),
+        )
+
+    # ---------------------------------------------------------------------------
+    # Process and write DummyJSON results
+    # ---------------------------------------------------------------------------
+
+    dj_ordered = []
+    for result in dj_results:
         if isinstance(result, Exception):
-            logger.error(f"A chunk failed: {result}")
+            logger.error(f"DummyJSON chunk failed: {result}", extra={"source": "dummyjson"})
         else:
-            ordered.append(result)
+            dj_ordered.append(result)
 
-    ordered.sort(key=lambda x: x[0])
+    dj_ordered.sort(key=lambda x: x[0])
+    dj_extracted = 0
 
-    products_extracted = 0
-    for chunk_index, products in ordered:
+    for chunk_index, records in dj_ordered:
         skip = chunk_index * chunk_size
-        expected = min(chunk_size, total - skip)
+        expected = min(chunk_size, dj_total - skip)
 
-        if len(products) != expected:
+        if len(records) != expected:
             logger.warning(
-                f"Expected {expected} products in chunk {chunk_index + 1}, "
-                f"got {len(products)}",
-                extra={"chunk": chunk_index + 1, "expected": expected, "received": len(products)},
+                f"Expected {expected} records in DummyJSON chunk {chunk_index + 1}, got {len(records)}",
+                extra={"source": "dummyjson", "chunk": chunk_index + 1, "expected": expected, "received": len(records)},
             )
         else:
             logger.info(
-                f"Chunk {chunk_index + 1} validated: {len(products)} products",
-                extra={"chunk": chunk_index + 1, "count": len(products)},
+                f"DummyJSON chunk {chunk_index + 1} validated: {len(records)} records",
+                extra={"source": "dummyjson", "chunk": chunk_index + 1, "count": len(records)},
             )
 
-        file_path = write_chunk(products, chunk_index + 1, date_str, time_str)
-        products_extracted += len(products)
+        file_path = write_chunk(records, "dummyjson", chunk_index + 1, date_str, time_str)
+        dj_extracted += len(records)
 
         logger.info(
-            f"Chunk {chunk_index + 1} written → {file_path}",
-            extra={"chunk": chunk_index + 1, "file": str(file_path)},
+            f"DummyJSON chunk {chunk_index + 1} written to {file_path}",
+            extra={"source": "dummyjson", "chunk": chunk_index + 1, "file": str(file_path)},
         )
+
+    # ---------------------------------------------------------------------------
+    # Process and write Mockaroo results
+    # ---------------------------------------------------------------------------
+
+    mk_ordered = []
+    for result in mk_results:
+        if isinstance(result, Exception):
+            logger.error(f"Mockaroo chunk failed: {result}", extra={"source": "mockaroo"})
+        else:
+            mk_ordered.append(result)
+
+    mk_ordered.sort(key=lambda x: x[0])
+    mk_extracted = 0
+
+    for chunk_index, records in mk_ordered:
+        expected = min(chunk_size, mk_total - chunk_index * chunk_size)
+
+        if len(records) != expected:
+            logger.warning(
+                f"Expected {expected} records in Mockaroo chunk {chunk_index + 1}, got {len(records)}",
+                extra={"source": "mockaroo", "chunk": chunk_index + 1, "expected": expected, "received": len(records)},
+            )
+        else:
+            logger.info(
+                f"Mockaroo chunk {chunk_index + 1} validated: {len(records)} records",
+                extra={"source": "mockaroo", "chunk": chunk_index + 1, "count": len(records)},
+            )
+
+        file_path = write_chunk(records, "mockaroo", chunk_index + 1, date_str, time_str)
+        mk_extracted += len(records)
+
+        logger.info(
+            f"Mockaroo chunk {chunk_index + 1} written to {file_path}",
+            extra={"source": "mockaroo", "chunk": chunk_index + 1, "file": str(file_path)},
+        )
+
+    # ---------------------------------------------------------------------------
+    # Final timing log
+    # ---------------------------------------------------------------------------
 
     total_elapsed = round((time.monotonic() - script_start) * 1000, 2)
     logger.info(
-        f"Extraction complete: {products_extracted} products across "
-        f"{num_chunks} chunks in {total_elapsed} ms",
+        f"All extractions complete in {total_elapsed} ms — "
+        f"DummyJSON: {dj_extracted} records, Mockaroo: {mk_extracted} records",
         extra={
-            "total_products_extracted": products_extracted,
-            "total_chunks": num_chunks,
             "total_elapsed_ms": total_elapsed,
+            "dummyjson_records": dj_extracted,
+            "mockaroo_records": mk_extracted,
         },
     )
+
+
 def main():
     """Entry point: run the async extraction coroutine."""
     asyncio.run(run())
+
+
 if __name__ == "__main__":
     main()
