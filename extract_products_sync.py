@@ -25,6 +25,63 @@ import config
 # Logging setup
 # ---------------------------------------------------------------------------
 
+
+
+SCRIPT_NAME = "extract_products_sync"
+
+
+class JsonFormatter(logging.Formatter):
+    """Format log records as single-line JSON objects."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        """Serialize a LogRecord to a JSON string."""
+        payload = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.getMessage(),
+        }
+        # Merge any extra fields attached to the record
+        for key, value in record.__dict__.items():
+            if key not in (
+                "args", "asctime", "created", "exc_info", "exc_text", "filename",
+                "funcName", "id", "levelname", "levelno", "lineno", "message",
+                "module", "msecs", "msg", "name", "pathname", "process",
+                "processName", "relativeCreated", "stack_info", "thread",
+                "threadName",
+            ) and not key.startswith("_"):
+                payload[key] = value
+        return json.dumps(payload)
+
+
+def build_logger(script_name: str) -> logging.Logger:
+    """Create and configure a JSON file logger for the given script name.
+
+    The log file is placed at logs/<YYMMDD>/<script_name>_<YYMMDD>_<HHMMSS>.json.
+    """
+    now = datetime.now(timezone.utc)
+    date_str = now.strftime("%y%m%d")
+    time_str = now.strftime("%H%M%S")
+
+    log_dir = Path(config.LOG_DIR) / date_str
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    log_file = log_dir / f"{script_name}_{date_str}_{time_str}.json"
+
+    logger = logging.getLogger(script_name)
+    logger.setLevel(logging.DEBUG)
+
+    handler = logging.FileHandler(log_file, encoding="utf-8")
+    handler.setFormatter(JsonFormatter())
+    logger.addHandler(handler)
+
+    # Also echo to stdout for convenience
+    console = logging.StreamHandler()
+    console.setFormatter(JsonFormatter())
+    logger.addHandler(console)
+
+    return logger
+
 def main():
     pass 
 
