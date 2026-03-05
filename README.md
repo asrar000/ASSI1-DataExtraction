@@ -23,6 +23,7 @@ Both scripts:
 - Validate that each chunk contains exactly the expected number of records
 - Never write the Mockaroo API key to logs
 - Emit a final log entry reporting total execution time and record counts for both sources
+- Return `total_elapsed_ms` from `main()` so they can be called programmatically
 
 ---
 
@@ -88,15 +89,18 @@ Options when the limit is reached:
 ```
 .
 ├── data/
-│   └── json/                   # Extracted data files (generated at runtime)
-├── logs/                       # JSON log files (generated at runtime)
-├── .env.example                # Template showing all required environment variables
-├── .env                        # Your local credentials — never committed
-├── config.py                   # Central configuration — reads from .env automatically
-├── extract_products_sync.py    # Synchronous extraction script
-├── extract_products_async.py   # Asynchronous extraction script
-├── requirements.txt            # Python dependencies
-└── README.md                   # This file
+│   └── json/                      # Extracted data files (generated at runtime)
+├── logs/                          # JSON log files (generated at runtime)
+├── .env.example                   # Template showing all required environment variables
+├── .env                           # Your local credentials — never committed
+├── config.py                      # Central configuration — reads from .env automatically
+├── path.py                        # Filesystem path constants (DATA_DIR, LOG_DIR, BASE_DIR)
+├── extract_products_sync.py       # Synchronous extraction script
+├── extract_products_async.py      # Asynchronous extraction script
+├── comparison_sync_async.py       # Runs both scripts and writes a comparison report
+├── comparison_sync_async.md       # Generated benchmark report (created at runtime)
+├── requirements.txt               # Python dependencies
+└── README.md                      # This file
 ```
 
 ---
@@ -169,8 +173,9 @@ needed. DummyJSON is a public API and requires no credentials.
 | `CONCURRENCY_LIMIT` | `5` | Async script only: maximum concurrent requests across both sources |
 | `RETRY_BACKOFF_BASE` | `2.0` | Exponential backoff base in seconds |
 | `RETRY_BACKOFF_MAX` | `60.0` | Maximum backoff ceiling in seconds |
-| `DATA_DIR` | `data/json` | Directory where output files are written |
-| `LOG_DIR` | `logs` | Root directory for log files |
+
+Output paths are defined in `path.py` as hardcoded constants and are not configurable
+via environment variables.
 
 ---
 
@@ -186,6 +191,11 @@ Asynchronous:
 python extract_products_async.py
 ```
 
+Comparison (runs both and generates a report):
+```bash
+python comparison_sync_async.py
+```
+
 Output files are written to `data/json/` and logs to `logs/<YYMMDD>/`.
 
 A final log entry is emitted at the end of each run reporting the total execution time
@@ -194,3 +204,20 @@ and the number of records extracted from each source, for example:
 ```json
 {"message": "All extractions complete in 3378.9 ms — DummyJSON: 194 records, Mockaroo: 10 records", "total_elapsed_ms": 3378.9, "dummyjson_records": 194, "mockaroo_records": 10}
 ```
+
+---
+
+## Benchmark Comparison
+
+Running `comparison_sync_async.py` executes both scripts sequentially and writes
+`comparison_sync_async.md` with a results table and verdict. Example output:
+
+| Script | Elapsed Time (ms) |
+|---|---|
+| `extract_products_sync.py` | 4853.77 |
+| `extract_products_async.py` | 1577.74 |
+
+Async was faster by **3276.03 ms** (3.08× speedup over sync).
+
+The async script is significantly faster because it fetches all 20 DummyJSON chunks
+and the Mockaroo chunk concurrently, while the sync script fetches them one at a time.
