@@ -46,27 +46,28 @@ SCRIPT_NAME = "extract_products_sync"
 # Logging setup
 # ---------------------------------------------------------------------------
 
-class JsonFormatter(logging.Formatter):
-    """Format log records as single-line JSON objects."""
+def format_log_record(record):
+    """Serialize a LogRecord to a single-line JSON string.
 
-    def format(self, record):
-        """Serialize a LogRecord to a JSON string."""
-        payload = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "level": record.levelname,
-            "logger": record.name,
-            "message": record.getMessage(),
-        }
-        for key, value in record.__dict__.items():
-            if key not in (
-                "args", "asctime", "created", "exc_info", "exc_text", "filename",
-                "funcName", "id", "levelname", "levelno", "lineno", "message",
-                "module", "msecs", "msg", "name", "pathname", "process",
-                "processName", "relativeCreated", "stack_info", "thread",
-                "threadName",
-            ) and not key.startswith("_"):
-                payload[key] = value
-        return json.dumps(payload)
+    The fixed fields (timestamp, level, logger, message) come first.
+    Any extra fields attached via the ``extra=`` kwarg are appended,
+    excluding Python's built-in LogRecord attributes.
+    """
+    payload = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "level": record.levelname,
+        "logger": record.name,
+        "message": record.getMessage(),
+    }
+    for key, value in record.__dict__.items():
+        if key not in (
+            "args", "asctime", "created", "exc_info", "exc_text", "filename",
+            "funcName", "id", "levelname", "levelno", "lineno", "message",
+            "module", "msecs", "msg", "name", "pathname", "process",
+            "processName", "relativeCreated", "stack_info", "thread", "threadName",
+        ) and not key.startswith("_"):
+            payload[key] = value
+    return json.dumps(payload)
 
 
 def build_logger(script_name):
@@ -87,11 +88,13 @@ def build_logger(script_name):
     logger.setLevel(logging.DEBUG)
 
     handler = logging.FileHandler(log_file, encoding="utf-8")
-    handler.setFormatter(JsonFormatter())
+    handler.setFormatter(logging.Formatter())
+    handler.formatter.format = format_log_record
     logger.addHandler(handler)
 
     console = logging.StreamHandler()
-    console.setFormatter(JsonFormatter())
+    console.setFormatter(logging.Formatter())
+    console.formatter.format = format_log_record
     logger.addHandler(console)
 
     return logger
