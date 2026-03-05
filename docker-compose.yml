@@ -1,0 +1,33 @@
+# docker-compose.yml
+# ---------------------------------------------------------------------------
+# Runs comparison_sync_async.py which executes both sync and async extractors
+# and writes comparison_sync_async.md to the host project root when done.
+#
+# Usage:
+#   docker compose up           # run and stream logs to terminal
+#   docker compose up -d        # run detached
+#   docker compose up --build   # rebuild image before running
+# ---------------------------------------------------------------------------
+
+services:
+  extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: product_extractor
+    env_file:
+      - .env
+    volumes:
+      # Persist extracted JSON files to host
+      - ./data/json:/app/data/json
+      # Persist log files to host
+      - ./logs:/app/logs
+      # Write comparison_sync_async.md back to the host project root.
+      # A named volume for site-packages prevents the .:/app mount from
+      # shadowing the pip-installed dependencies inside the image.
+      - .:/app
+      - python_packages:/usr/local/lib/python3.12/site-packages
+    restart: "no"
+
+volumes:
+  python_packages:

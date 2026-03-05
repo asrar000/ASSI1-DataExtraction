@@ -1,0 +1,26 @@
+# .dockerignore
+# Excludes files that should not be copied into the Docker image.
+
+# Virtual environment
+.venv/
+
+# Credentials — loaded at runtime via env_file, never baked into the image
+.env
+
+# Generated output — these are mounted as volumes at runtime
+data/
+logs/
+comparison_sync_async.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Git
+.git/
+.gitignore
+
+# Editor
+.vscode/
+.idea/
