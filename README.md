@@ -158,6 +158,9 @@ needed. DummyJSON is a public API and requires no credentials.
 
 ## Configuration Reference
 
+The following variables are the only ones read from `.env`. Everything else
+is hardcoded directly in the scripts.
+
 | Variable | Default | Description |
 |---|---|---|
 | `DUMMYJSON_HOST` | `https://dummyjson.com` | Base URL of the DummyJSON API |
@@ -165,17 +168,24 @@ needed. DummyJSON is a public API and requires no credentials.
 | `MOCKAROO_HOST` | `https://api.mockaroo.com` | Base URL of the Mockaroo API |
 | `MOCKAROO_API_KEY` | — | Your Mockaroo API key — **required** |
 | `MOCKAROO_SCHEMA_KEY` | `bb185820` | Mockaroo schema key — pre-filled, no change needed |
-| `DUMMYJSON_TOTAL_PRODUCTS` | `194` | Total products to extract from DummyJSON |
-| `DUMMYJSON_CHUNK_SIZE` | `10` | Records per DummyJSON API call (pagination page size) |
-| `MOCKAROO_TOTAL_RECORDS` | `10` | Total records to extract from Mockaroo per run |
-| `MOCKAROO_CHUNK_SIZE` | `10` | Records per Mockaroo API call — keep equal to `MOCKAROO_TOTAL_RECORDS` for a single request |
+
+The following are hardcoded constants in each script and are not configurable
+via environment variables:
+
+| Constant | Value | Description |
+|---|---|---|
+| `CHUNK_SIZE` | `10` | Records per API call for both sources |
 | `RETRY_LIMIT` | `5` | Maximum retries per request on failure or HTTP 429 |
-| `CONCURRENCY_LIMIT` | `5` | Async script only: maximum concurrent requests across both sources |
 | `RETRY_BACKOFF_BASE` | `2.0` | Exponential backoff base in seconds |
 | `RETRY_BACKOFF_MAX` | `60.0` | Maximum backoff ceiling in seconds |
+| `CONCURRENCY_LIMIT` | `5` | Async script only: maximum concurrent requests |
 
-Output paths are defined in `path.py` as hardcoded constants and are not configurable
-via environment variables.
+Total records per source are passed as parameters to the extraction functions:
+`total_records=194` for DummyJSON and `total_records=10` for Mockaroo.
+To change them, edit the values in `main()` directly.
+
+Output paths are defined in `path.py` as `Path` constants anchored to the
+project root and are not configurable via environment variables.
 
 ---
 
