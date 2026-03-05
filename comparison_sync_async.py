@@ -8,7 +8,6 @@ Usage:
     python comparison_sync_async.py
 """
 
-import sys
 from datetime import datetime, timezone
 
 import extract_products_sync
