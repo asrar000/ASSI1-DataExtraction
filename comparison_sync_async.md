@@ -1,17 +1,17 @@
 # Sync vs Async Extraction — Comparison Report
 
-Generated: 2026-03-05 04:54:55 UTC
+Generated: 2026-03-05 09:40:42 UTC
 
 ## Results
 
 | Script | Elapsed Time (ms) |
 |---|---|
-| `extract_products_sync.py` | 5271.35 |
-| `extract_products_async.py` | 1585.03 |
+| `extract_products_sync.py` | 5700.86 |
+| `extract_products_async.py` | 2089.91 |
 
 ## Verdict
 
-Async was faster by **3686.32 ms** (3.33× speedup over sync).
+Async was faster by **3610.95 ms** (2.73× speedup over sync).
 
 ## Notes
 

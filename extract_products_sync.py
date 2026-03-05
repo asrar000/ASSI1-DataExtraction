@@ -41,6 +41,15 @@ import path
 
 SCRIPT_NAME = "extract_products_sync"
 
+# ---------------------------------------------------------------------------
+# Extraction constants
+# ---------------------------------------------------------------------------
+
+CHUNK_SIZE = 10
+RETRY_LIMIT = 5
+RETRY_BACKOFF_BASE = 2.0
+RETRY_BACKOFF_MAX = 60.0
+
 
 # ---------------------------------------------------------------------------
 # Logging setup
@@ -135,7 +144,7 @@ def fetch_dummyjson_chunk(session, logger, limit, skip):
     params = {"limit": limit, "skip": skip}
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
-    for attempt in range(config.RETRY_LIMIT + 1):
+    for attempt in range(RETRY_LIMIT + 1):
         try:
             start = time.monotonic()
             response = session.get(url, params=params, timeout=30)
@@ -157,12 +166,12 @@ def fetch_dummyjson_chunk(session, logger, limit, skip):
                 return records
 
             if response.status_code == 429 or response.status_code >= 500:
-                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                 logger.warning(
                     f"Retryable error – sleeping {wait:.1f}s before retry",
                     extra={**log_extra, "wait_seconds": wait},
                 )
-                if attempt < config.RETRY_LIMIT:
+                if attempt < RETRY_LIMIT:
                     time.sleep(wait)
                     continue
 
@@ -174,7 +183,7 @@ def fetch_dummyjson_chunk(session, logger, limit, skip):
             raise
 
         except requests.RequestException as exc:
-            wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+            wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
             logger.error(
                 f"Request exception: {exc} – sleeping {wait:.1f}s",
                 extra={
@@ -186,11 +195,11 @@ def fetch_dummyjson_chunk(session, logger, limit, skip):
                     "wait_seconds": wait,
                 },
             )
-            if attempt < config.RETRY_LIMIT:
+            if attempt < RETRY_LIMIT:
                 time.sleep(wait)
                 continue
 
-    raise RuntimeError(f"DummyJSON: all {config.RETRY_LIMIT} retries exhausted for skip={skip}")
+    raise RuntimeError(f"DummyJSON: all {RETRY_LIMIT} retries exhausted for skip={skip}")
 
 
 # ---------------------------------------------------------------------------
@@ -214,7 +223,7 @@ def fetch_mockaroo_chunk(session, logger, count, chunk_index):
     params = {"count": count, "key": config.MOCKAROO_API_KEY}
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
-    for attempt in range(config.RETRY_LIMIT + 1):
+    for attempt in range(RETRY_LIMIT + 1):
         try:
             start = time.monotonic()
             response = session.get(url, params=params, timeout=30)
@@ -236,9 +245,6 @@ def fetch_mockaroo_chunk(session, logger, count, chunk_index):
                 try:
                     records = response.json()
                 except ValueError:
-                    # Mockaroo returns 200 with a plain-text error message when
-                    # the daily row limit is exceeded or the schema is misconfigured.
-                    # Log the raw body so the cause is visible, then fail immediately.
                     logger.error(
                         f"Mockaroo returned 200 but body is not JSON: {raw!r}",
                         extra={**log_extra, "response_body": raw},
@@ -248,12 +254,12 @@ def fetch_mockaroo_chunk(session, logger, count, chunk_index):
                 return records
 
             if response.status_code == 429 or response.status_code >= 500:
-                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                 logger.warning(
                     f"Retryable error – sleeping {wait:.1f}s before retry",
                     extra={**log_extra, "wait_seconds": wait},
                 )
-                if attempt < config.RETRY_LIMIT:
+                if attempt < RETRY_LIMIT:
                     time.sleep(wait)
                     continue
 
@@ -268,7 +274,7 @@ def fetch_mockaroo_chunk(session, logger, count, chunk_index):
             raise
 
         except requests.RequestException as exc:
-            wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+            wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
             logger.error(
                 f"Request exception: {exc} – sleeping {wait:.1f}s",
                 extra={
@@ -280,11 +286,11 @@ def fetch_mockaroo_chunk(session, logger, count, chunk_index):
                     "wait_seconds": wait,
                 },
             )
-            if attempt < config.RETRY_LIMIT:
+            if attempt < RETRY_LIMIT:
                 time.sleep(wait)
                 continue
 
-    raise RuntimeError(f"Mockaroo: all {config.RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
+    raise RuntimeError(f"Mockaroo: all {RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
 
 
 # ---------------------------------------------------------------------------
@@ -309,14 +315,14 @@ def write_chunk(records, source, chunk_number, date_str, time_str):
 # Source orchestrators
 # ---------------------------------------------------------------------------
 
-def extract_dummyjson(session, logger, date_str, time_str):
+def extract_dummyjson(session, logger, date_str, time_str, total_records):
     """Run the full DummyJSON extraction loop.
 
     Fetches all products in chunks using limit/skip pagination, validates
     each chunk, writes each chunk to disk, and returns the total record count.
     """
-    total = config.DUMMYJSON_TOTAL_PRODUCTS
-    chunk_size = config.DUMMYJSON_CHUNK_SIZE
+    total = total_records
+    chunk_size = CHUNK_SIZE
     num_chunks = math.ceil(total / chunk_size)
     records_extracted = 0
 
@@ -359,15 +365,15 @@ def extract_dummyjson(session, logger, date_str, time_str):
     return records_extracted
 
 
-def extract_mockaroo(session, logger, date_str, time_str):
+def extract_mockaroo(session, logger, date_str, time_str, total_records):
     """Run the full Mockaroo extraction loop.
 
     Mockaroo generates data on demand — each request returns a fresh batch.
     Fetches all records in chunks, validates each chunk, writes each chunk
     to disk, and returns the total record count.
     """
-    total = config.MOCKAROO_TOTAL_RECORDS
-    chunk_size = config.MOCKAROO_CHUNK_SIZE
+    total = total_records
+    chunk_size = CHUNK_SIZE
     num_chunks = math.ceil(total / chunk_size)
     records_extracted = 0
 
@@ -427,8 +433,8 @@ def main():
     dummyjson_session = build_session(api_key=config.DUMMYJSON_API_KEY)
     mockaroo_session = build_session()
 
-    dummyjson_total = extract_dummyjson(dummyjson_session, logger, date_str, time_str)
-    mockaroo_total = extract_mockaroo(mockaroo_session, logger, date_str, time_str)
+    dummyjson_total = extract_dummyjson(dummyjson_session, logger, date_str, time_str, total_records=194)
+    mockaroo_total = extract_mockaroo(mockaroo_session, logger, date_str, time_str, total_records=10)
 
     total_elapsed = round((time.monotonic() - script_start) * 1000, 2)
     logger.info(

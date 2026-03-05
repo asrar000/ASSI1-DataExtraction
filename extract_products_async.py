@@ -40,6 +40,16 @@ import path
 
 SCRIPT_NAME = "extract_products_async"
 
+# ---------------------------------------------------------------------------
+# Extraction constants
+# ---------------------------------------------------------------------------
+
+CHUNK_SIZE = 10
+RETRY_LIMIT = 5
+RETRY_BACKOFF_BASE = 2.0
+RETRY_BACKOFF_MAX = 60.0
+CONCURRENCY_LIMIT = 5
+
 
 # ---------------------------------------------------------------------------
 # Logging setup
@@ -114,7 +124,7 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
     params = {"limit": limit, "skip": skip}
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
-    for attempt in range(config.RETRY_LIMIT + 1):
+    for attempt in range(RETRY_LIMIT + 1):
         async with semaphore:
             try:
                 start = time.monotonic()
@@ -138,12 +148,12 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
                         return chunk_index, records
 
                     if response.status == 429 or response.status >= 500:
-                        wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                        wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                         logger.warning(
                             f"Retryable error – sleeping {wait:.1f}s before retry",
                             extra={**log_extra, "wait_seconds": wait},
                         )
-                        if attempt < config.RETRY_LIMIT:
+                        if attempt < RETRY_LIMIT:
                             await asyncio.sleep(wait)
                             continue
 
@@ -155,7 +165,7 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
                 raise
 
             except aiohttp.ClientError as exc:
-                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                 logger.error(
                     f"Client exception: {exc} – sleeping {wait:.1f}s",
                     extra={
@@ -168,11 +178,11 @@ async def fetch_dummyjson_chunk(session, logger, semaphore, limit, skip, chunk_i
                         "wait_seconds": wait,
                     },
                 )
-                if attempt < config.RETRY_LIMIT:
+                if attempt < RETRY_LIMIT:
                     await asyncio.sleep(wait)
                     continue
 
-    raise RuntimeError(f"DummyJSON: all {config.RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
+    raise RuntimeError(f"DummyJSON: all {RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
 
 
 # ---------------------------------------------------------------------------
@@ -196,7 +206,7 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
     params = {"count": count, "key": config.MOCKAROO_API_KEY}
     request_id = f"req-{uuid.uuid4().int >> 64}"
 
-    for attempt in range(config.RETRY_LIMIT + 1):
+    for attempt in range(RETRY_LIMIT + 1):
         async with semaphore:
             try:
                 start = time.monotonic()
@@ -220,8 +230,6 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                             import json as _json
                             records = _json.loads(raw)
                         except ValueError:
-                            # Mockaroo returns 200 with a plain-text error message when
-                            # the daily row limit is exceeded or the schema is misconfigured.
                             logger.error(
                                 f"Mockaroo returned 200 but body is not JSON: {raw!r}",
                                 extra={**log_extra, "response_body": raw},
@@ -231,12 +239,12 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                         return chunk_index, records
 
                     if response.status == 429 or response.status >= 500:
-                        wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                        wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                         logger.warning(
                             f"Retryable error – sleeping {wait:.1f}s before retry",
                             extra={**log_extra, "wait_seconds": wait},
                         )
-                        if attempt < config.RETRY_LIMIT:
+                        if attempt < RETRY_LIMIT:
                             await asyncio.sleep(wait)
                             continue
 
@@ -252,7 +260,7 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                 raise
 
             except aiohttp.ClientError as exc:
-                wait = min(config.RETRY_BACKOFF_BASE ** attempt, config.RETRY_BACKOFF_MAX)
+                wait = min(RETRY_BACKOFF_BASE ** attempt, RETRY_BACKOFF_MAX)
                 logger.error(
                     f"Client exception: {exc} – sleeping {wait:.1f}s",
                     extra={
@@ -265,11 +273,11 @@ async def fetch_mockaroo_chunk(session, logger, semaphore, count, chunk_index):
                         "wait_seconds": wait,
                     },
                 )
-                if attempt < config.RETRY_LIMIT:
+                if attempt < RETRY_LIMIT:
                     await asyncio.sleep(wait)
                     continue
 
-    raise RuntimeError(f"Mockaroo: all {config.RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
+    raise RuntimeError(f"Mockaroo: all {RETRY_LIMIT} retries exhausted for chunk={chunk_index}")
 
 
 # ---------------------------------------------------------------------------
@@ -294,7 +302,7 @@ def write_chunk(records, source, chunk_number, date_str, time_str):
 # Main async orchestrator
 # ---------------------------------------------------------------------------
 
-async def run():
+async def run(dj_total_records=194, mk_total_records=10):
     """Build all tasks for both sources and run them concurrently.
 
     DummyJSON and Mockaroo tasks share the same semaphore so the total
@@ -309,11 +317,11 @@ async def run():
     date_str = now.strftime("%y%m%d")
     time_str = now.strftime("%H%M%S")
 
-    dj_total = config.DUMMYJSON_TOTAL_PRODUCTS
-    dj_chunk_size = config.DUMMYJSON_CHUNK_SIZE
-    mk_total = config.MOCKAROO_TOTAL_RECORDS
-    mk_chunk_size = config.MOCKAROO_CHUNK_SIZE
-    concurrency = config.CONCURRENCY_LIMIT
+    dj_total = dj_total_records
+    dj_chunk_size = CHUNK_SIZE
+    mk_total = mk_total_records
+    mk_chunk_size = CHUNK_SIZE
+    concurrency = CONCURRENCY_LIMIT
 
     dj_num_chunks = math.ceil(dj_total / dj_chunk_size)
     mk_num_chunks = math.ceil(mk_total / mk_chunk_size)
@@ -457,7 +465,7 @@ async def run():
 
 def main():
     """Entry point: run the async extraction coroutine."""
-    return asyncio.run(run())
+    return asyncio.run(run(dj_total_records=194, mk_total_records=10))
 
 
 if __name__ == "__main__":
