@@ -33,7 +33,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 import config
-import paths
+import path
 
 # ---------------------------------------------------------------------------
 # Script identity

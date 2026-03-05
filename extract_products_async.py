@@ -32,7 +32,7 @@ from datetime import datetime, timezone
 import aiohttp
 
 import config
-import paths
+import path
 
 # ---------------------------------------------------------------------------
 # Script identity

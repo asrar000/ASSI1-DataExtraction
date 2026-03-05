@@ -1,4 +1,4 @@
-# paths.py
+# path.py
 #
 # Central definition of all filesystem paths used by the extraction scripts.
 # Import this module wherever a path to data/ or logs/ is needed.
