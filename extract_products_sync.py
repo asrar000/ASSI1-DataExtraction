@@ -440,6 +440,7 @@ def main():
             "mockaroo_records": mockaroo_total,
         },
     )
+    return total_elapsed
 
 
 if __name__ == "__main__":

@@ -452,11 +452,12 @@ async def run():
             "mockaroo_records": mk_extracted,
         },
     )
+    return total_elapsed
 
 
 def main():
     """Entry point: run the async extraction coroutine."""
-    asyncio.run(run())
+    return asyncio.run(run())
 
 
 if __name__ == "__main__":
