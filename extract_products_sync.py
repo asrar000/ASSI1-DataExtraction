@@ -79,7 +79,7 @@ def build_logger(script_name):
     date_str = now.strftime("%y%m%d")
     time_str = now.strftime("%H%M%S")
 
-    log_dir = paths.LOG_DIR / date_str
+    log_dir = path.LOG_DIR / date_str
     log_dir.mkdir(parents=True, exist_ok=True)
 
     log_file = log_dir / f"{script_name}_{date_str}_{time_str}.json"
@@ -297,7 +297,7 @@ def write_chunk(records, source, chunk_number, date_str, time_str):
     The filename format is: <source>_<chunk_number>_<date>_<time>.json
     where source is either 'dummyjson' or 'mockaroo'.
     """
-    out_dir = paths.DATA_DIR
+    out_dir = path.DATA_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
     file_path = out_dir / f"{source}_{chunk_number}_{date_str}_{time_str}.json"
     with open(file_path, "w", encoding="utf-8") as fh:
