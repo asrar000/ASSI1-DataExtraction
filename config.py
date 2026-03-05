@@ -91,12 +91,3 @@ RETRY_BACKOFF_BASE = float(os.getenv("RETRY_BACKOFF_BASE", "2.0"))
 RETRY_BACKOFF_MAX = float(os.getenv("RETRY_BACKOFF_MAX", "60.0"))
 
 
-# ---------------------------------------------------------------------------
-# Output paths
-# ---------------------------------------------------------------------------
-
-# Where chunked JSON data files are written
-DATA_DIR = os.getenv("DATA_DIR", "data/json")
-
-# Root folder for log files (a dated sub-folder is created automatically)
-LOG_DIR = os.getenv("LOG_DIR", "logs")
